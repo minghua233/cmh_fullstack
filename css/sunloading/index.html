@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sunloading</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background-color:#FFCA18;
+    }
+    .box{
+        width: 600px;
+        height: 300px;
+        margin: 300px auto 0;
+        background: url(./images/horizon.png) no-repeat;
+        position: relative;
+    }
+    .sun{
+        width: 136%;
+        height: 136%;
+        position: absolute;
+        left: 25%;
+        right: 0;
+        top: -100px;
+        z-index: -1;
+        animation: move 2.7s infinite linear;
+    }
+    @keyframes move {
+        0%{
+            transform: translateY(0);
+        }
+        10%{
+            transform: translateY(0);
+        }
+        40%{
+            transform: translateY(-60px);
+        }
+        70%{
+            transform: translateY(-60px);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+    .sun .eye{
+        position: absolute;
+        top: 25%;
+        left: 12%;
+        animation: eye 2.7s infinite linear;
+
+    }
+    @keyframes eye {
+        0%{
+            transform: translateX(0px);
+        }
+        50%{
+            transform: translateX(0px) scale(1,1);
+        }
+        55%{
+            transform: translateX(0px) scale(1,0.1);
+        }
+        60%{
+            transform: translateX(0px) scale(1);
+        }
+        70%{
+            transform: translateX(60px);
+        }
+        100%{
+            transform: translateX(60px);
+        }
+    }
+    .sun .sunbody{
+        animation: scroll 2.7s infinite linear;
+    }
+    @keyframes scroll {
+        0%{
+            transform: rotate(0);
+        }
+        40%{
+            transform: 
+            rotate(0);
+        }
+        50%{
+            transform: rotate(45deg);
+        }
+        60%{
+            transform: rotate(45deg);
+        }
+        100%{
+            transform: rotate(45deg);
+        }
+    }
+    .box p{
+        text-align: center;
+        padding-top: 25px;
+        font-family: '微软雅黑';
+        font-size: 30px;
+        font-weight: 700;
+        color: rgb(185,122,86);
+        animation: opp 2.7s infinite linear;
+    }
+    @keyframes opp{
+        0%{
+            opacity: 1;
+        }
+        40%{
+            opacity: 1;
+        }
+        50%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+</style>
+<body>
+    <div class="box">
+         <div class="sun">
+             <img src="./images/sun.png" alt="" class="sunbody">
+             <img src="./images/eyes.png" alt="" class="eye">
+         </div>
+         <p>loading...</p>
+    </div>
+</body>
+</html>
