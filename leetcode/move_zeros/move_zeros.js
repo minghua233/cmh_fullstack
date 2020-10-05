@@ -24,3 +24,21 @@ var moveZeroes = function(nums) {
     } 
     return nums;
 };
+
+
+
+
+// 解法2
+// 从尾到头，依次判断，元素是否为 0 ，如果是，并且右边也有不为 0 元素，则该元素与右边元素交换位置，i 移到交换后的位置。
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var moveZeroes = function(nums) {
+  for(let i = nums.length; i>=0; i--){
+      if (nums[i]===0 && nums[i+1] && nums[i+1]!==0){
+          [nums[i],nums[i+1]] = [nums[i+1],nums[i]]
+          i+=2
+      }
+  }
+};
