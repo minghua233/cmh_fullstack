@@ -27,4 +27,4 @@
    
    block + modifier +组装的层次 = 网页世界 乐高
  - 作业， 打卡
-   1. 阅读-webkit-tap-highlight-color MDN 官方文档，并写小结
+   1. 阅读 -webkit-tap-highlight-color MDN 官方文档，并写小结
