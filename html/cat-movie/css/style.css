@@ -78,3 +78,62 @@
   font-size: 14px;
   margin-right: 3px;
 }
+.movie-info__rate {
+  width: 100%;
+  background-color: #16151b;
+  height: 100px;
+  border-radius: 3px;
+}
+.movie-info__rate .rate-title {
+  margin-right: 10px;
+  font-size: 0;
+  display: flex;
+}
+.movie-info__rate .rate-title__left {
+  flex: 1;
+  color: #fff;
+  font-size: 16px;
+}
+.movie-info__rate .rate-title__right {
+  color: #69686e;
+  font-size: 14px;
+}
+.movie-info__rate .rate-detail {
+  margin: 5px 15px 0 15px;
+  display: flex;
+}
+.movie-info__rate .rate-detail__left {
+  flex: 1;
+  display: flex;
+}
+.movie-info__rate .rate-detail__left .grade {
+  flex: 1;
+  color: #b7b6bc;
+  font-size: 12px;
+  text-align: center;
+}
+.movie-info__rate .rate-detail__left .grade h2 {
+  color: #e5b313;
+  font-size: 20px;
+}
+.movie-info__rate .rate-detail__left .star {
+  flex: 2;
+}
+.movie-info__rate .rate-detail__left .star ul {
+  list-style-type: none;
+  font-size: 0;
+}
+.movie-info__rate .rate-detail__left .star ul .list {
+  height: 10px;
+  flex-flow: row-reverse;
+}
+.movie-info__rate .rate-detail__left .star ul .list .iconfont {
+  color: #68676d;
+  font-size: 8px;
+}
+.movie-info__rate .rate-detail__left .star ul .list .star-stage5 {
+  margin-left: 50px;
+  width: 10px;
+  height: 3px;
+  background-color: #e5b313;
+}
