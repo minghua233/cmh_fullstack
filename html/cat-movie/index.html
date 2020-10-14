@@ -23,7 +23,7 @@
                     <p class="timer">中国大陆 / 153分钟</p>
                     <p class="play-time">2020-10-01 8:00 中国大陆上映</p>
                     <div class="btn-wrap">
-                        <div class="flex">
+                        <div class="flex" id='watch'>
                             <i class="iconfont icon-xihuan"></i>
                             想看
                         </div>
@@ -40,6 +40,37 @@
 
         </div>
         <div class="movie-desc"></div>
+        <!-- toast -->
+        <div id="toast">
+            <div class="weui-mask_transparent"></div>
+            <div class="weui-toast">
+                <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+                <p class="weui-toast__content">已标注为想看</p>
+            </div>
+        </div>
     </div>
+
+    <script>
+        var watchBtn = document.getElementById('watch')
+        var toast = document.getElementById('toast')
+        var heart = document.querySelector('.icon-xihuan')
+        var isClicked = false
+        var text = document.querySelector('.weui-toast__content')
+        watchBtn.addEventListener('click', function() {
+            toast.style.display = 'block'
+            if(isClicked) {                
+                heart.style.color = 'white'
+                text.innerHTML = '已取消想看'              
+            } else {
+                heart.style.color = 'red'
+                text.innerHTML = '已标注想看'
+            }
+            isClicked = !isClicked 
+            setTimeout(function() {
+                    toast.style.display = 'none'                
+                }, 2000)
+
+        })
+    </script>
 </body>
 </html>
