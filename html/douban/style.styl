@@ -1,0 +1,37 @@
+body
+  padding-top 30px
+  display block
+body, td, th
+  font 12px Helvetica, Arial, sans-serif
+  line-height 1.62
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote
+  margin 0
+  padding 0
+a
+  cursor pointer
+  &:link
+    color #37a
+    text-decoration none
+  &:visited
+    color #669
+    text-decoration none
+  &:-webkit-any-link // 超链接
+    color -webkit-link
+    cursor pointer
+    text-decoration underline
+#anony-nav
+  width 1080px
+  margin 0 auto 25px
+  h1
+    display inline-block
+    zoom 1
+    vertical-align middle
+    width 160px
+    height 34px
+    margin 0 20px 0 0
+    padding 0
+    font-size 12px
+    font-weight normal
+    background url('https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png') // img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png)
+    // -webkit-image-set   可以根据用户设备的分辨率匹配合适的图像。
+    background-image -webkit-image-set(url('https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png') 1x, url('https://img3.doubanio.com/f/sns/0f9e2dbca60b52f595ddbc02073cb4bb879ed1c9/pics/nav/logo_db@2x.png') 2x) // img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png) 1x, url(https://img3.doubanio.com/f/sns/0f9e2dbca60b52f595ddbc02073cb4bb879ed1c9/pics/nav/logo_db@2x.png) 2x)
