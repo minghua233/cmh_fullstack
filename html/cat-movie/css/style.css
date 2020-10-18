@@ -1,9 +1,11 @@
 #toast {
   display: none;
 }
+
 .movie {
   width: 100%;
 }
+
 .movie-head {
   width: 100%;
   height: 40px;
@@ -14,41 +16,50 @@
   box-sizing: border-box;
   display: flex;
 }
+
 .movie-head .iconfont {
   width: 16px;
 }
+
 .movie-head .title {
   flex: 1;
   text-align: center;
 }
+
 .movie-info {
   padding: 15px;
   background-color: #1e2025;
 }
+
 .movie-info__desc {
   width: 100%;
   display: flex;
 }
+
 .movie-info__desc .info-pic {
   width: 122px;
   height: 165px;
   overflow: hidden;
 }
+
 .movie-info__desc .info-pic img {
   width: 100%;
 }
+
 .movie-info__desc .info-container {
   flex: 1;
   color: #9b9da2;
   font-size: 12px;
   margin-left: 10px;
 }
+
 .movie-info__desc .info-container .name {
   color: #fff;
   font-size: 24px;
   font-family: Arial, sans-serif;
   font-weight: normal;
 }
+
 .movie-info__desc .info-container .type span {
   width: 40px;
   height: 14px;
@@ -57,10 +68,12 @@
   background-size: cover;
   vertical-align: middle;
 }
+
 .movie-info__desc .info-container .btn-wrap {
   display: flex;
   margin-top: 10px;
 }
+
 .movie-info__desc .info-container .btn-wrap .flex {
   flex: 1;
   background-color: #58575d;
@@ -71,77 +84,95 @@
   border-radius: 5px;
   line-height: 30px;
 }
+
 .movie-info__desc .info-container .btn-wrap .flex:nth-child(2) {
   margin-left: 10px;
 }
+
 .movie-info__desc .info-container .btn-wrap .flex .iconfont {
   font-size: 14px;
   margin-right: 3px;
 }
+
 .movie-info__rate {
   background-color: #16151b;
   padding: 10px;
   border-radius: 4px;
   margin-top: 15px;
 }
+
 .movie-info__rate .rate-title {
   display: flex;
   justify-content: space-between;
 }
+
 .movie-info__rate .rate-title__left {
   color: #fff;
 }
+
 .movie-info__rate .rate-title__left .icon-maoyandianying {
   color: #f00;
 }
+
 .movie-info__rate .rate-title__right {
   color: #69686e;
   font-size: 12px;
 }
+
 .movie-info__rate .rate-detail {
   display: flex;
 }
+
 .movie-info__rate .rate-detail__left {
   flex: 454;
   display: flex;
 }
+
 .movie-info__rate .rate-detail__left .grade {
   color: #b7b6bc;
   font-size: 12px;
   text-align: center;
 }
+
 .movie-info__rate .rate-detail__left .grade h2 {
   color: #e5b313;
   font-size: 26px;
 }
+
 .movie-info__rate .rate-detail__left .star {
   text-align: right;
   display: flex;
   align-items: center;
 }
+
 .movie-info__rate .rate-detail__left .star ul {
   list-style-type: none;
   font-size: 0;
 }
+
 .movie-info__rate .rate-detail__left .star ul .list {
   display: flex;
   align-items: center;
   margin: 2px 0;
 }
+
 .movie-info__rate .rate-detail__left .star ul .list .star-num {
   font-size: 0;
   width: 40px;
 }
+
 .movie-info__rate .rate-detail__left .star ul .list .star-num img {
   width: 8px;
   height: 8px;
 }
+
 .movie-info__rate .rate-detail__left .star ul .list .persent {
   width: 78px;
   height: 4px;
   background: #252528;
   position: relative;
 }
+
 .movie-info__rate .rate-detail__left .star ul .list .persent .persent-val {
   display: block;
   position: absolute;
@@ -151,21 +182,26 @@
   background: #fcc300;
   width: 80%;
 }
+
 .movie-info__rate .rate-detail__right {
   flex: 266;
   display: flex;
   align-items: center;
 }
+
 .movie-info__rate .rate-detail__right img {
   height: 46px;
 }
+
 .movie-desc {
   padding: 15px;
 }
+
 .movie-desc .content {
   overflow: auto;
   transition: all 1s ease;
 }
+
 .movie-desc .line-clamp {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -174,49 +210,61 @@
   word-break: break-all;
   overflow: hidden;
 }
+
 .movie-desc .arrow {
   text-align: center;
   font-size: 16px;
 }
+
 .movie-desc .arrow .iconfont {
   display: block;
   transform: rotateZ(0deg);
   transition: all 0.5s ease;
 }
+
 .movie-desc .arrow .up {
   display: block;
   transform: rotateZ(180deg);
 }
+
 .movie-ad img {
   width: 100%;
   height: 75px;
 }
+
 .movie-staff {
   padding: 15px;
 }
+
 .movie-staff .title {
   font-size: 18px;
 }
+
 .movie-staff .actors {
   overflow-x: scroll;
   white-space: nowrap;
 }
+
 .movie-staff .actors::-webkit-scrollbar {
   display: none;
 }
+
 .movie-staff .actors .actor {
   display: inline-block;
   margin-right: 5px;
   margin-top: 5px;
   text-align: center;
 }
+
 .movie-staff .actors .actor img {
   width: 65px;
   height: 85px;
 }
+
 .movie-staff .actors .actor .name {
   font-size: 12px;
 }
+
 .movie-staff .actors .actor .post {
   font-size: 10px;
   color: #a7a7a7;

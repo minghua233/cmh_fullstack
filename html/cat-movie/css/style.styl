@@ -1,189 +1,178 @@
 #toast
-    display none
+  display none
 .movie
+  width 100%
+  &-head
     width 100%
-    &-head
-        width 100%
-        height 40px
-        line-height 40px
-        background-color #1e2025
-        color: #ffffff
-        padding 0 10px
-        box-sizing: border-box
-        display: flex
-        .iconfont
-            width 16px
-        .title
-            flex: 1
-            text-align center
-    &-info 
-        padding 15px
-        background-color #1e2025
-        &__desc
-            width 100%
-            display: flex
-            .info-pic
-                width 122px
-                height 165px
-                overflow hidden
-                img 
-                    width 100%
-            .info-container
-                flex: 1
-                color: #9b9da2
-                font-size 12px
-                margin-left 10px
-                .name
-                    color: #ffffff
-                    font-size: 24px
-                    font-family Arial,sans-serif
-                    font-weight normal
-                .type
-                    span 
-                        width 40px
-                        height 14px
-                        display inline-block
-                        background-image url(https://s0.meituan.net/bs/myfe/canary/file/asgard/images/movie/movie-tag-2DIMAX.png)
-                        background-size cover
-                        vertical-align: middle
-                .btn-wrap
-                    display flex
-                    margin-top: 10px
-                    .flex
-                        flex: 1
-                        background-color: #58575d
-                        width 115px
-                        height 30px
-                        color: #fff
-                        text-align center
-                        border-radius 5px
-                        line-height 30px
-                        &:nth-child(2)
-                            margin-left: 10px
-                        .iconfont
-                            font-size: 14px
-                            margin-right 3px
-        &__rate
-            
-            background-color #16151b
-            padding 10px
-            border-radius 4px
-            margin-top 15px
-            .rate-title               
-                display: flex
-                justify-content: space-between               
-                &__left
-                    color: white                    
-                    .icon-maoyandianying
-                        color: red                   
-                &__right                                      
-                    color: #69686e
-                    font-size 12px
-                    
-            .rate-detail                
-                display: flex
-                &__left
-                    flex 454
-                    display: flex
-                    .grade
-                        // margin-left 15px                    
-                        color: #b7b6bc
-                        font-size 12px
-                        text-align: center
-                        h2
-                            color: #e5b313                             
-                            font-size 26px
-                    .star
-                        // margin-right 15px
-                        text-align right
-                        display: flex
-                        align-items center
-                        ul
-                            list-style-type none
-                            font-size: 0
-                            .list
-                                display: flex
-                                align-items center
-                                margin 2px 0
-                                .star-num
-                                    font-size: 0
-                                    width 40px
-                                    img
-                                        width 8px
-                                        height 8px
-                                .persent
-                                    width 78px
-                                    height 4px
-                                    background #252528
-                                    position relative
-                                    .persent-val
-                                        display: block
-                                        position absolute
-                                        left 0
-                                        top 0
-                                        height 100%
-                                        background #fcc300
-                                        width 80%                                    
-                &__right
-                    flex: 266
-                    display: flex
-                    align-items center
-                    img
-                        height 46px
-    &-desc
-        padding 15px
-        .content
-            overflow: auto
-            transition: all 1s ease
-        .line-clamp
-            display: -webkit-box
-            -webkit-box-orient: vertical
-            -webkit-line-clamp 3
-            word-wrap: break-word
-            word-break: break-all
-            overflow hidden
-        .arrow
-            text-align center
-            font-size 16px
-            .iconfont
-                display: block
-                transform: rotateZ(0deg)
-                transition: all 0.5s ease
-        .arrow .up
-            display block
-            transform rotateZ(180deg)
-    &-ad
+    height 40px
+    line-height 40px
+    background-color #1e2025
+    color #ffffff
+    padding 0 10px
+    box-sizing border-box
+    display flex
+    .iconfont
+      width 16px
+    .title
+      flex 1
+      text-align center
+  &-info
+    padding 15px
+    background-color #1e2025
+    &__desc
+      width 100%
+      display flex
+      .info-pic
+        width 122px
+        height 165px
+        overflow hidden
         img
-            width 100%
-            height 75px
-    &-staff
-        padding 15px
-        .title
-            font-size: 18px
-        .actors            
-            overflow-x: scroll;
-            white-space: nowrap;
-            &::-webkit-scrollbar
-                display: none
-            .actor
-                display: inline-block;
-                margin-right:  5px
-                margin-top 5px
-                text-align: center;
-                img
-                    width 65px
-                    height 85px
-                .name
-                    font-size: 12px
-                .post
-                    font-size: 10px
-                    color: #a7a7a7
-
-
-
-
-
-                            
-
-
-            
+          width 100%
+      .info-container
+        flex 1
+        color #9b9da2
+        font-size 12px
+        margin-left 10px
+        .name
+          color #ffffff
+          font-size 24px
+          font-family Arial, sans-serif
+          font-weight normal
+        .type
+          span
+            width 40px
+            height 14px
+            display inline-block
+            background-image url('https://s0.meituan.net/bs/myfe/canary/file/asgard/images/movie/movie-tag-2DIMAX.png') // s0.meituan.net/bs/myfe/canary/file/asgard/images/movie/movie-tag-2DIMAX.png)
+            background-size cover
+            vertical-align middle
+        .btn-wrap
+          display flex
+          margin-top 10px
+          .flex
+            flex 1
+            background-color #58575d
+            width 115px
+            height 30px
+            color #fff
+            text-align center
+            border-radius 5px
+            line-height 30px
+            &:nth-child(2)
+              margin-left 10px
+            .iconfont
+              font-size 14px
+              margin-right 3px
+    &__rate
+      background-color #16151b
+      padding 10px
+      border-radius 4px
+      margin-top 15px
+      .rate-title
+        display flex
+        justify-content space-between
+        &__left
+          color white
+          .icon-maoyandianying
+            color red
+        &__right
+          color #69686e
+          font-size 12px
+      .rate-detail
+        display flex
+        &__left
+          flex 454
+          display flex
+          .grade
+            // margin-left 15px
+            color #b7b6bc
+            font-size 12px
+            text-align center
+            h2
+              color #e5b313
+              font-size 26px
+          .star
+            // margin-right 15px
+            text-align right
+            display flex
+            align-items center
+            ul
+              list-style-type none
+              font-size 0
+              .list
+                display flex
+                align-items center
+                margin 2px 0
+                .star-num
+                  font-size 0
+                  width 40px
+                  img
+                    width 8px
+                    height 8px
+                .persent
+                  width 78px
+                  height 4px
+                  background #252528
+                  position relative
+                  .persent-val
+                    display block
+                    position absolute
+                    left 0
+                    top 0
+                    height 100%
+                    background #fcc300
+                    width 80%
+        &__right
+          flex 266
+          display flex
+          align-items center
+          img
+            height 46px
+  &-desc
+    padding 15px
+    .content
+      overflow auto
+      transition all 1s ease
+    .line-clamp
+      display -webkit-box
+      -webkit-box-orient vertical
+      -webkit-line-clamp 3
+      word-wrap break-word
+      word-break break-all
+      overflow hidden
+    .arrow
+      text-align center
+      font-size 16px
+      .iconfont
+        display block
+        transform rotateZ(0deg)
+        transition all 0.5s ease
+    .arrow .up
+      display block
+      transform rotateZ(180deg)
+  &-ad
+    img
+      width 100%
+      height 75px
+  &-staff
+    padding 15px
+    .title
+      font-size 18px
+    .actors
+      overflow-x scroll
+      white-space nowrap
+      &::-webkit-scrollbar
+        display none
+      .actor
+        display inline-block
+        margin-right 5px
+        margin-top 5px
+        text-align center
+        img
+          width 65px
+          height 85px
+        .name
+          font-size 12px
+        .post
+          font-size 10px
+          color #a7a7a7
