@@ -19,8 +19,32 @@ a
     color -webkit-link
     cursor pointer
     text-decoration underline
+h1
+  word-wrap break-word
+  display block
+  font-size 25px
+  font-weight bold
+  color #494949
+  margin 0
+  padding 0 0 15px 0
+  line-height 1.1
+div
+  display block
+li
+  text-align -webkit-match-parent
+ul
+  display block
+  list-style-type disc
+  margin-block-start 1em
+  margin-block-end 1em
+  margin-inline-start 0px
+  margin-inline-end 0px
+  padding-inline-start 40px
+ul, ol
+  list-style-type disc // 设置列表样式
+  list-style none
 #anony-nav
-  width 1080px
+  width 1080px 0
   margin 0 auto 25px
   h1
     display inline-block
@@ -32,6 +56,45 @@ a
     padding 0
     font-size 12px
     font-weight normal
-    background url('https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png') // img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png)
+    background url('https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png') no-repeat 0 0// img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png)
     // -webkit-image-set   可以根据用户设备的分辨率匹配合适的图像。
     background-image -webkit-image-set(url('https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png') 1x, url('https://img3.doubanio.com/f/sns/0f9e2dbca60b52f595ddbc02073cb4bb879ed1c9/pics/nav/logo_db@2x.png') 2x) // img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png) 1x, url(https://img3.doubanio.com/f/sns/0f9e2dbca60b52f595ddbc02073cb4bb879ed1c9/pics/nav/logo_db@2x.png) 2x)
+  .anony-nav-links
+    float right
+    margin-top 6px
+    li
+      display inline-block
+      zoom 1
+      margin 0 14px 0 0px
+      a
+        display inline-block
+        zoom 1
+        width 40px
+        height 20px
+        overflow hidden
+        margin 0
+        line-height 20em
+        outline none // 设置轮廓线
+        vertical-align middle
+        background transparent url('https://img3.doubanio.com/f/sns/8536084688879cb1137e8efdff30e59614ff2f86/pics/sns/anony_home/anony_nav_logo.png') no-repeat 100% 100% // img3.doubanio.com/f/sns/8536084688879cb1137e8efdff30e59614ff2f86/pics/sns/anony_home/anony_nav_logo.png) no-repeat 100% 100%
+      .lnk-books
+        background-position 0 0
+      .lnk-movie
+        background-position -60px 0
+      .lnk-music
+        background-position -120px 0
+      .lnk-events
+        background-position -299px 0
+      .lnk-group
+        background-position -180px 0
+      .lnk-read
+        background transparent url('https://img3.doubanio.com/f/sns/f3ba00ef46f185989b70ac6841d9f4d67b6e3a25/pics/sns/anony_home/ic_read_home_nav.png') no-repeat 100% 100%
+      .lnk-fm
+        background-position -241px 0
+      .lnk-shijian
+        margin-bottom 1px
+        background transparent url('https://img3.doubanio.com/f/sns/b474dd402e4293943146a4789de3dae88ec96636/pics/sns/anony_home/ic_shijian_home_nav.png') no-repeat 100% 100% // img3.doubanio.com/f/sns/b474dd402e4293943146a4789de3dae88ec96636/pics/sns/anony_home/ic_shijian_home_nav.png) no-repeat 100% 100%;
+        background-image -webkit-image-set(url('https://img3.doubanio.com/f/sns/b474dd402e4293943146a4789de3dae88ec96636/pics/sns/anony_home/ic_shijian_home_nav.png') 1x, url('https://img3.doubanio.com/f/sns/74745beec69da53ac959a9bcc4e1e66f852ba2e8/pics/sns/anony_home/ic_shijian_home_nav@2x.png') 2x) // img3.doubanio.com/f/sns/b474dd402e4293943146a4789de3dae88ec96636/pics/sns/anony_home/ic_shijian_home_nav.png) 1x, url(https://img3.doubanio.com/f/sns/74745beec69da53ac959a9bcc4e1e66f852ba2e8/pics/sns/anony_home/ic_shijian_home_nav@2x.png) 2x);
+      .lnk-market
+        width 42px
+        background-position -421px 0
