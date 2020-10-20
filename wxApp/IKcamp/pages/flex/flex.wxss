@@ -1,0 +1,8 @@
+/* pages/flex/flex.wxss */
+.section__title{
+  padding: 40rpx;
+}
+.flex-wrp{
+  display: flex;
+  flex-direction: row;
+}
