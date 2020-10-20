@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
   <title>douban</title>
 </head>
+
 <body class="gray-mode">
   <div id="anony-nav">
     <div class="anony-nav-links">
@@ -17,45 +19,56 @@
         <li><a target="_blank" class="lnk-group" href="https://www.douban.com/group/">豆瓣小组</a></li>
         <li><a target="_blank" class="lnk-read" href="https://read.douban.com">豆瓣阅读</a></li>
         <li><a target="_blank" class="lnk-fm" href="https://douban.fm">豆瓣FM</a></li>
-        <li><a target="_blank" class="lnk-shijian" href="https://time.douban.com/?dt_time_source=douban-web_anonymous_index_top_nav">豆瓣时间</a></li>
-        <li><a target="_blank" class="lnk-market" href="https://market.douban.com?utm_campaign=anonymous_top_nav&amp;utm_source=douban&amp;utm_medium=pc_web">豆瓣豆品</a></li>
+        <li><a target="_blank" class="lnk-shijian"
+            href="https://time.douban.com/?dt_time_source=douban-web_anonymous_index_top_nav">豆瓣时间</a></li>
+        <li><a target="_blank" class="lnk-market"
+            href="https://market.douban.com?utm_campaign=anonymous_top_nav&amp;utm_source=douban&amp;utm_medium=pc_web">豆瓣豆品</a>
+        </li>
       </ul>
-      <h1><a href="https://www.douban.com">豆瓣</a></h1>
+      
+    </div>
+    <h1><a href="https://www.douban.com">豆瓣</a></h1>
       <div class="anony-srh">
         <form action="https://www.douban.com/search" method="get">
-          <span class="inp"><input type="text" maxlength="60" size="12" placeholder="书籍、电影、音乐、小组、小站、成员" name="q" autocomplete="off"></span>
-        <span class="bn"><input type="submit" value="搜索"></span>
+          <span class="inp"><input type="text" maxlength="60" size="12" placeholder="书籍、电影、音乐、小组、小站、成员" name="q"
+              autocomplete="off"></span>
+          <span class="bn"><input type="submit" value="搜索"></span>
         </form>
-        </div>
-    </div>
+      </div>
   </div>
-  <div id="anony-reg-new" style="background-image: url(https://img9.doubanio.com/view/puppy_image/raw/public/16ad990ec23uwn790d4.jpg)">
+  <div id="anony-reg-new"
+    style="background-image: url(https://img9.doubanio.com/view/puppy_image/raw/public/16ad990ec23uwn790d4.jpg)">
     <div class="wrapper">
       <div class="login">
-        <iframe style="height: 300px; width: 300px;" frameborder="0" src="//accounts.douban.com/passport/login_popup?login_source=anony"></iframe>
+        <iframe style="height: 300px; width: 300px;" frameborder="0"
+          src="//accounts.douban.com/passport/login_popup?login_source=anony"></iframe>
       </div>
       <div class="app">
         <p class="app-title">豆瓣<span>6.0</span></p>
         <p class="app-slogan"></p>
         <a href="https://www.douban.com/doubanapp/app?channel=nimingye" class="lnk-app">下载豆瓣 App</a>
         <div class="app-qr">
-          <a href="javascript: void 0;" class="lnk-qr" id="expand-qr"><img src="https://img3.doubanio.com/f/sns/0c708de69ce692883c1310053c5748c538938cb0/pics/sns/anony_home/icon_qrcode_green.png" width="28" height="28"></a>
+          <a href="javascript: void 0;" class="lnk-qr" id="expand-qr"><img
+              src="https://img3.doubanio.com/f/sns/0c708de69ce692883c1310053c5748c538938cb0/pics/sns/anony_home/icon_qrcode_green.png"
+              width="28" height="28"></a>
           <div class="app-qr-expand">
-            <img src="https://img3.doubanio.com/f/sns/1cad523e614ec4ecb6bf91b054436bb79098a958/pics/sns/anony_home/doubanapp_qrcode.png" width="160" height="160">
+            <img
+              src="https://img3.doubanio.com/f/sns/1cad523e614ec4ecb6bf91b054436bb79098a958/pics/sns/anony_home/doubanapp_qrcode.png"
+              width="160" height="160">
             <p>iOS / Android 扫码直接下载</p>
           </div>
         </div>
       </div>
     </div>
     <script>
-    Do(function() {
-      var app_qr = $('.app-qr');
-      app_qr.hover(function() {
-        app_qr.addClass('open');
-      }, function() {
-        app_qr.removeClass('open');
+      Do(function () {
+        var app_qr = $('.app-qr');
+        app_qr.hover(function () {
+          app_qr.addClass('open');
+        }, function () {
+          app_qr.removeClass('open');
+        });
       });
-    });
     </script>
   </div>
   <div id="anony-sns" class="section"></div>
@@ -68,5 +81,5 @@
   <div id="anony-events" class="section"></div>
   <div class="wrapper"></div>
 </body>
-</html>
 
+</html>
