@@ -5,9 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    arrList: []
   },
 
+  updataArrList() {
+    let arr = this.data.arrList
+    arr.push(...this.createData())  //...es6解构，取出数组所有数据
+    this.setData({
+      arrList: arr
+    })
+  },
+
+  createData() {
+    let length = this.data.arrList.length
+    if (length >= 30) return []
+    return Array.from({
+      length: 3
+    }, (v, i) => `数据${1+i+length}`)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -54,7 +69,8 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    console.log("到底了");
+    this.updataArrList()
   },
 
   /**
