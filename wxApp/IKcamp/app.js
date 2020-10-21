@@ -33,7 +33,11 @@ App({
       }
     })
   },
-  globalData: {
-    userInfo: null
+  globalData: { // 全局均可访问
+    userInfo: null,
+    user: {
+      name: '',
+      avator: ''
+    }
   }
 })
