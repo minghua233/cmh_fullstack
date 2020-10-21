@@ -8,7 +8,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#09ba07",
-    "navigationBarTitleText": "Demo",
+    "navigationBarTitleText": "IKcamp英语学习",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true
   },
