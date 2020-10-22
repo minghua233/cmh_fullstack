@@ -11,7 +11,7 @@ saleOffices.trigger = function (price, squareMeter) {
     this.clientList[i](price, squareMeter);
   }
 }
-saleOffices.listen(
+saleOffices.listen( // 订阅关系构建
   function (price, squareMeter) {
     if (price > 18000) {
       console.log('我的菜');
