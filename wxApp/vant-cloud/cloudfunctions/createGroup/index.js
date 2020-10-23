@@ -20,4 +20,13 @@ exports.main = async (event, context) => {
       updatatime: new Date()
     }
   })
+  .then(res => {  // res代表.then()之前函数的执行结果
+    return db.collection('user-group').add({
+      data: {
+        groupId: res._id,
+        userId: userInfo.openId,
+        invalid: false
+      }
+    })
+  })
 }

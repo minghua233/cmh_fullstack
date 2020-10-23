@@ -1,4 +1,5 @@
 // miniprogram/pages/index/index.js
+import Notify from '../../miniprogram_npm/@vant/weapp/notify/notify';
 Page({
 
   /**
@@ -21,6 +22,15 @@ Page({
   },
   createGroup() {
     const self = this
+    if (self.data.groupName === '') {
+      Notify({
+        type: 'warning',
+        message: '起个名字吧',
+        duration: 1500,
+        selector: '#notify-selector',
+      });
+      return
+    }
     // 把groupName传给后端
     wx.cloud.callFunction({
       name: 'createGroup',
@@ -28,7 +38,21 @@ Page({
         groupName: self.data.groupName
       },
       success(res) {
-        console.log(res);
+        // console.log(res);
+        self.setData({
+          groupName: ''
+        })
+        Notify({
+          type: 'success',
+          message: '新建成功',
+          duration: 1500,
+          selector: '#notify-selector',
+        });
+        setTimeout(() => {
+          wx.switchTab({
+            url: '/pages/group/group',
+          });
+        },1500)
       },
       fail(err) {
         console.log('错误', err);
