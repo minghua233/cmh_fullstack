@@ -23,7 +23,7 @@
 >
   <view class="group-dialog-body">
     <van-field
-    label="群名"
+    label="群组名"
     value="{{ groupName }}"
     placeholder="起个名字吧"
     bind:change="onGroupNameChange"

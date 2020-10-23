@@ -20,10 +20,25 @@ Page({
     })
   },
   createGroup() {
-    
+    const self = this
+    // 把groupName传给后端
+    wx.cloud.callFunction({
+      name: 'createGroup',
+      data: {
+        groupName: self.data.groupName
+      },
+      success(res) {
+        console.log(res);
+      },
+      fail(err) {
+        console.log('错误', err);
+      }
+    })
   },
-  onGroupNameChange() {
-
+  onGroupNameChange(event) {
+    this.setData({
+      groupName: event.detail
+    })
   },
   /**
    * 生命周期函数--监听页面加载
