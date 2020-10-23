@@ -3,18 +3,59 @@ const db = wx.cloud.database() // wx 微信 database 数据库
 const _ = db.command // CRUD
 // table collection
 const productsCollection = db.collection('products')
+const photos = db.collection('photos')
 const app = getApp()
 
 Page({
   data: {
     products: [],
+    photos: [],
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     logged: false,
     takeSession: false,
     requestResult: ''
   },
+  upload() {
+    // console.log('点了按钮');  
+    // 云开发，SQL，
+    // html
+    // weixin 给予小程序能力
+    // 在相机里选择
+    wx.chooseImage({
+      count: 9,
+      sizeType: ['original', 'compresses'],
+      sourceType: ['album', 'camera'],
+      success: res => {
+        // console.log(res);
+        const tempFilePaths = res.tempFilePaths
+        for (var i = 0; i < tempFilePaths.length; i++) {
+          let randString = +new Date() + '' + Math.floor(Math.random() * 1000000) + '.png'
+          wx.cloud.uploadFile({
+            cloudPath: randString,
+            filePath: tempFilePaths[i],
+            success: res => {
+              // console.log(res);
+              if (res.statusCode == 200) {
+                photos.add({
+                    data: {
+                      image: res.fileID
+                    }
+                  })
+                  .then(res => {
+                    wx.showToast({
+                      title: '上传成功',
+                      icon: 'success'
+                    })
+                  })
+              }
+            }
+          })
+        }
+      }
+    })
 
+  },
   onLoad: function () {
     if (!wx.cloud) {
       wx.redirectTo({
@@ -29,6 +70,9 @@ Page({
         products: res.data
       });
     })
+    photos.get().then(res => this.setData({
+      photos: res.data
+    }))
 
     // 获取用户信息
     wx.getSetting({
