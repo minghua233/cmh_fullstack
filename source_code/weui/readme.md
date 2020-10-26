@@ -14,3 +14,12 @@
       $weuiFontSans = 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei'
       $weuiFontDefault = $weuiFontEN, $weuiFontSans
     ```
+
+  3. stylus mixin 代码的封装及复用
+    区别于函数，
+    参数赋初值的写法
+
+    ```stylus
+      setTapColor($c = rgba(0, 0, 0, 0))
+      -webkit-tap-highlight-color $c
+    ```
