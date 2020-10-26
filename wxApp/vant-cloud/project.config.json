@@ -34,7 +34,7 @@
   },
   "appid": "wx9b78cbba9a1ed341",
   "projectname": "vant-cloud",
-  "libVersion": "2.8.1",
+  "libVersion": "2.13.2",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {

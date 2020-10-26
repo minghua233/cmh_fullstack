@@ -16,6 +16,7 @@ App({
       })
     }
     // this.globalData.shareParam = options.query
+
     // 查看是否授权登录
     wx.getSetting({
       success(settingRes) {
@@ -28,7 +29,7 @@ App({
 
               wx.cloud.callFunction({
                 name: 'cerateUser',
-                data:{
+                data: {
                   avataUrl: infoRes.userInfo.avataUrl,
                   name: '',
                   nickName: infoRes.userInfo.nickName,
@@ -37,8 +38,7 @@ App({
               })
             }
           })
-        } 
-        else {
+        } else {
           wx.redirectTo({
             url: `pages/login/login?back=${options.path.split('/')[1]}`
           })
@@ -49,3 +49,4 @@ App({
     this.globalData = {}
   }
 })
+
