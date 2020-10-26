@@ -12,21 +12,21 @@ const db = cloud.database({
 exports.main = async (event, context) => {
   const userInfo = event.userInfo // event不仅包含前端传递的参数还会自动携带用户信息
   return await db.collection('group').add({
-    data: {
-      name: event.groupName,
-      createBy: userInfo.openId,
-      createTime: new Date(),
-      deleted: false,
-      updatatime: new Date()
-    }
-  })
-  .then(res => {  // res代表.then()之前函数的执行结果
-    return db.collection('user-group').add({
       data: {
-        groupId: res._id,
-        userId: userInfo.openId,
-        invalid: false
+        name: event.groupName,
+        createBy: userInfo.openId,
+        createTime: new Date(),
+        deleted: false,
+        updatatime: new Date()
       }
     })
-  })
+    .then(res => { // res代表.then()之前函数的执行结果
+      return db.collection('user-group').add({
+        data: {
+          groupId: res._id,
+          userId: userInfo.openId,
+          invalid: false
+        }
+      })
+    })
 }
