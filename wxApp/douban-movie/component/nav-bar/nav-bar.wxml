@@ -4,8 +4,7 @@
   <view style="height: {{topHeight}}px"></view>
   <view class="container">
     <!-- 手机头部的状态栏 -->
-    <view style="{{statusBarStyle}}">
-      <view class="nav-bar" style="{{navBarStyle}}">{{title}}</view>
-    </view>
+    <view style="{{statusBarStyle}}"></view>
+    <view class="nav-bar" style="{{navBarStyle}}">{{title}}</view>
   </view>
 </view>

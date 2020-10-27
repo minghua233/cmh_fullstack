@@ -1,2 +1,2 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<nav-bar title='我的'></nav-bar>
