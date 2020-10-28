@@ -12,6 +12,35 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getCity(() => {
+
+    })
+  },
+
+  getCity(succeed) {
+    // 先拿到城市名称
+    // 先拿到当前所在地经纬度
+    wx.getLocation({
+      success: (res) => {
+        //  console.log(res);
+        // 将经纬度转换成具体的城市
+        wx.request({
+          url: 'https://api.map.baidu.com/reverse_geocoding/v3',
+          data: {
+            ak: '0K1iNNaW6EVOLR47oNjhhWFspSlowHM1',
+            output: 'json',
+            coordtype: 'wgs84', // 返回gps坐标
+            location: `${res.latitude}, ${res.longitude}`
+          },
+          success: (res) => {
+            console.log(res);
+            // 拿豆瓣的api地址做接口请求
+            // 将获取到的城市名传给api
+            // 拿到当前城市热映的电影数据
+          }
+        })
+      },
+    });
 
   },
 
