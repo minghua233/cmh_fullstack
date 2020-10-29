@@ -1,26 +1,30 @@
 /* component/movieItem/movieItem.wxss */
-.item{
+.item {
   display: inline-block;
 }
-.item .info{
+
+.item .info {
   display: flex;
   flex-direction: column;
 }
-.img{
+
+.img {
   width: 201rpx;
   height: 301rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 15rpx;
   border-radius: 10rpx;
 }
-.name{
-  font-size: 35rpx;
+
+.name {
+  font-size: 32rpx;
   font-weight: bold;
   max-width: 200rpx;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.score-wrapper{
+
+.score-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
