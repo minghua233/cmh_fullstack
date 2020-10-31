@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.wrapper1 {
+  width: 100%;
+  background-image: url("./image/section1-bg.png");
+  background-size: 100% 100%;
+  height: 813px;
+  overflow: hidden;
+}
+.wrapper1 .wrapper1_info {
+  margin-top: 225px;
+}
+.wrapper1 .wrapper1_info .wrapper1_title {
+  width: 808px;
+  height: 138px;
+  font-family: Exo-Thin;
+  font-size: 60px;
+  font-weight: 100;
+  font-stretch: normal;
+  line-height: 75px;
+  letter-spacing: 2px;
+  color: #282828;
+  margin: 0 auto;
+  text-align: center;
+}
+.wrapper1 .wrapper1_info .wrapper1_play {
+  background-image: url("./image/video-icon.png");
+  width: 59px;
+  height: 59px;
+  margin: 0 auto;
+  margin-top: 53px;
+}
+.wrapper1 .wrapper1_info .wrapper1_button {
+  width: 190px;
+  height: 50px;
+  background-color: #ff6d6d;
+  border-radius: 3px;
+  margin: 0 auto;
+  margin-top: 39px;
+  font-family: Exo-Regular;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 50px;
+  letter-spacing: 3px;
+  color: #fff;
+  text-align: center;
+}
+.wrapper1 .wrapper1_info .wrapper1_detail {
+  width: 303px;
+  height: 11px;
+  font-family: Exo-Regular;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 45px;
+  letter-spacing: 1px;
+  color: #282828;
+  opacity: 0.6;
+  margin: 0 auto;
+  text-align: center;
+}
+.wrapper2 {
+  width: 100%;
+  height: 724px;
+  overflow: hidden;
+}
+.wrapper2 .wrapper2_article {
+  margin-left: 151px;
+  margin-top: 191px;
+}
+.wrapper2 .wrapper2_article .wrapper2_article__tips {
+  width: 150px;
+  height: 13px;
+  font-family: Exo-Medium;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 50px;
+  letter-spacing: 3px;
+  color: #ff6d6d;
+}
+.wrapper2 .wrapper2_article .wrapper2_article__title {
+  margin-top: 25px;
+  width: 600px;
+  height: 93px;
+  font-family: Exo-Medium;
+  font-size: 40px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 50px;
+  letter-spacing: 2px;
+  color: #282828;
+}
+.wrapper2 .wrapper2_article .wrapper2_article__title i {
+  color: #ff6d6d;
+}
+.wrapper2 .wrapper2_article .wrapper2_article__content {
+  width: 610px;
+  height: 200px;
+  font-family: Exo-Medium;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 26px;
+  letter-spacing: 1px;
+  color: #282828;
+  opacity: 0.66;
+  margin-top: 45px;
+}
+.wrapper2 .wrapper2_rectangle {
+  width: 568px;
+  height: 724px;
+  background-color: #ededed;
+  position: absolute;
+  right: 0;
+  top: 813px;
+}
+.wrapper2 .wrapper2_triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 480px solid #fb8686;
+  border-left: 568px solid transparent;
+  bottom: 0;
+  right: 0;
+}
+.wrapper3 {
+  width: 100%;
+  height: 675px;
+  background-image: url("./image/pen-holder.png");
+  background-size: 100% 100%;
+  overflow: hidden;
+  position: relative;
+}
+.wrapper3 .wrapper3_earphones {
+  background-image: url("./image/earphones.png");
+  width: 213px;
+  height: 279px;
+  opacity: 0.9;
+  position: absolute;
+  right: 140px;
+  top: -30px;
+}
+.wrapper3 .wrapper3_features {
+  margin-top: 138px;
+}
+.wrapper3 .wrapper3_features .wrapper3_features__tips {
+  margin: 0 auto;
+  width: 160px;
+  height: 13px;
+  font-family: Exo-Medium;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 50px;
+  letter-spacing: 3px;
+  color: #ff6d6d;
+}
+.wrapper3 .wrapper3_features .wrapper3_features__title {
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 500px;
+  height: 32px;
+  font-family: Exo-Medium;
+  font-size: 40px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 50px;
+  letter-spacing: 2px;
+  color: #282828;
+}
+.wrapper3 .wrapper3_features .wrapper3_features__myFeatures {
+  margin-left: 160px;
+}
+.wrapper3 .wrapper3_features .wrapper3_features__myFeatures .wrapper3_features__oneFearure {
+  margin-top: 91px;
+  float: left;
+  height: 202px;
+  margin-right: 46px;
+}
+.wrapper3 .wrapper3_features .wrapper3_features__myFeatures .wrapper3_features__oneFearure .oneFearure_icon {
+  text-align: center;
+}
+.wrapper3 .wrapper3_features .wrapper3_features__myFeatures .wrapper3_features__oneFearure .oneFearure_icon img {
+  width: 65px;
+  height: 65px;
+  border-style: solid;
+  border-width: 1px;
+  border-image-source: linear-gradient(0deg, rgba(0,0,0,0.15) 0%, rgba(255,255,255,0.15) 100%);
+  border-image-slice: 1;
+}
+.wrapper3 .wrapper3_features .wrapper3_features__myFeatures .wrapper3_features__oneFearure .oneFearure_title {
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 280px;
+  height: 18px;
+  font-family: Exo-Medium;
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 50px;
+  letter-spacing: 1px;
+  color: #282828;
+}
+.wrapper3 .wrapper3_features .wrapper3_features__myFeatures .wrapper3_features__oneFearure .oneFearure_desc {
+  margin-top: 30px;
+  text-align: center;
+  width: 380px;
+  height: 70px;
+  font-family: Exo-Medium;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 26px;
+  letter-spacing: 1px;
+  color: #282828;
+  opacity: 0.66;
+}
+.wrapper4 {
+  width: 100%;
+  height: 547px;
+  position: relative;
+}
+.wrapper4 .wrapper4_bg {
+  width: 0;
+  height: 0;
+  border-bottom: 547px solid #fb8686;
+  border-right: 600px solid transparent;
+  border-left: 80px solid #fb8686;
+}
+.wrapper4 .wrapper4_macbook {
+  width: 630px;
+  height: 376px;
+  background: url("./image/macbook.png") no-repeat;
+  position: absolute;
+  top: 95px;
+  left: 55px;
+}
+.wrapper4 .wrapper4_article {
+  position: absolute;
+  top: 125px;
+  left: 739px;
+}
+.wrapper4 .wrapper4_article .wrapper4_article__tips {
+  width: 150px;
+  height: 13px;
+  font-family: Exo-Medium;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 50px;
+  letter-spacing: 3px;
+  color: #ff6d6d;
+}
+.wrapper4 .wrapper4_article .wrapper4_article__title {
+  width: 500px;
+  height: 93px;
+  margin-top: 25px;
+  font-family: Exo-Medium;
+  font-size: 40px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 50px;
+  letter-spacing: 2px;
+  color: #282828;
+}
+.wrapper4 .wrapper4_article .wrapper4_article__title i {
+  color: #ff6d6d;
+}
+.wrapper4 .wrapper4_article .wrapper4_article__content {
+  margin-top: 36px;
+  width: 560px;
+  height: 96px;
+  font-family: Exo-Medium;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 26px;
+  letter-spacing: 1px;
+  color: #282828;
+  opacity: 0.66;
+}
+.wrapper5 {
+  width: 100%;
+  height: 648px;
+}
