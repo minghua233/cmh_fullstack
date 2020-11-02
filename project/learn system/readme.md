@@ -39,6 +39,10 @@
       - 文章
         articles
         _id title desc ts is_top
+        love_num 怎么计算
+        user love_num 0 articles count save
+        > 0 写文章时 +1
+        post_article 
 
       
 
