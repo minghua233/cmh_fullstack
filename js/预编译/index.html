@@ -67,10 +67,35 @@
     // }
     // test(1)
 
-    var global = 100
-    function fn() {
-      console.log(global);
-    }
+    // var global = 100
+    // function fn() {
+    //   console.log(global);
+    // }
+    // GO: {
+    //   global:undefined 100
+    //   fn:function(){...}
+    // }
+    // AO: {
+
+    // }
+
+    // global = 100
+    // function fn() {
+    //   console.log(global);//undefined
+    //   global = 200
+    //   console.log(global);//200
+    //   var global = 300
+    // }
+    // fn()
+    // var global
+
+    // GO: {
+    //   global:undefined 100
+    //   fn:function (){}
+    // }
+    // AO: {
+    //   global:undefined 200 300
+    // }
   </script>
 </body>
 
