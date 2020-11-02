@@ -1,19 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <script>
     // let name = '蜗牛'
-    function foo() {
-      let name = '婷婷'
-      console.log(name);
-    }
-    console.log(name);
-    foo()
+    // var a = 1
+    // function fn(a) {
+    //   var a = 2
+    //   function a() {}
+    //   var b = a
+    //   console.log(a);
+    // }
+    // fn(a)
+    // 预编译
+    // AO: {
+    //   a: undefined 3 function() {} 2,
+    //   b: undefined 2
+    // }
+
+
+    // function fn(a) {
+    //   console.log(a);
+    //   var a = 123;
+
+    //   function a() {};
+    //   console.log(a);
+    //   var b = function () {};
+    //   console.log(b);
+
+    //   function d() {};
+    //   var d = a;
+    //   console.log(d);
+    // }
+    // fn(1)
+
+    
   </script>
 </body>
+
 </html>
