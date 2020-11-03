@@ -19,7 +19,7 @@
   - 功能要求
     1. 角色区分 role -1 1 2 3 4 5 6 数字越大 权限越大
       Admin/Teacher/StuAdmin/Student|TryStudent
-      user _id uid(学号) pro_num has_resume has_job shixi_danwei zhaunzheng_danwei shixi_payment zhuanzheng_payment score(荣誉) bid
+      user _id uid(学号) pro_num has_resume has_job shixi_danwei zhaunzheng_danwei shixi_payment zhuanzheng_payment score(荣誉) bid can_waibao
       ban
         bid bname
     2. 试听功能|邀请功能 运营 分享
@@ -30,7 +30,7 @@
         收集用户的GitHub账号
         https://github.com/${minghua233}
         position-relative -> 图片
-        爬虫 
+        爬虫
       - 主动提交
         1. 每个人都一张图,新的覆盖旧的
           gitPic _id url uid bid
@@ -43,6 +43,11 @@
         user love_num 0 articles count save
         > 0 写文章时 +1
         post_article 
-
+      - 项目
+      - leetcode 算法 GitHub
+      - 外包
+        计时计件 倒计时2 
+        付费记录
+        开源出去
       
 
