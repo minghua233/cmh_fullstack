@@ -7,7 +7,7 @@
 // foo.call(bar)
 
 var a = {
-  user: '蜗牛',
+  user: '🐌',
   fn: function() {
     console.log(this.user);
     console.log();
