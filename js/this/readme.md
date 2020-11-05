@@ -10,8 +10,9 @@ this所处的词法作用域在哪里生效了，this的作用域就指向哪里
 
 - 隐式丢失
 是被隐式绑定的函数丢失绑定对象
+
 # 显示绑定
-call apply bind
+call  apply   bind
 
 
 # 判断this
