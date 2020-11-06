@@ -86,6 +86,10 @@ class CanvasBarrage {
         // 弹幕从右往左渲染
         barrage.x -= barrage.speed
         barrage.renderOnce() //渲染每一条弹幕
+
+        if (barrage.x < -barrage.width) {
+          barrage.flag = true
+        }
       }
     })
   }
