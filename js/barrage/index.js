@@ -66,6 +66,9 @@ class CanvasBarrage {
     this.clear()
     // 渲染
     this.renderBarrage()
+    if (this.isPaused === false) {
+      requestAnimationFrame(this.render())
+    }
   }
 
   clear() {
@@ -118,6 +121,32 @@ class Barrage {
     this.width = p.clientWidth
     document.body.removeChild(p)
 
-    
+    // 设置弹幕出现的位置
+    this.x = this.context.canvas.width
+    this.y = this.context.canvas.height * Math.random()
+
+    // 超出范围处理
+    if (this.y < this.fontSize) {
+      this.y = this.fontSize
+    } else if (this.y > this.context.canvas.height - this.fontSize) {
+      this.y = this.context.canvas.height
+    }
+  }
+
+  // 渲染每一条弹幕
+  renderOnce() {
+    this.context.ctx.font = `${this.fontSize}px Arial`
+    this.context.ctx.fillstyle = this.color
+    // 绘制文字
+    this.context.ctx.fillText(this.value, this.x, this.y)
   }
 }
+
+let canvasBarrage = new CanvasBarrage(canvas, video, {
+  data
+})
+
+video.addEventListener('play', () => {
+  canvasBarrage.isPaused = false
+  canvasBarrage.render()
+})
