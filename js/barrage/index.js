@@ -53,5 +53,46 @@ class CanvasBarrage {
       fontSize: 20,
       data: []
     }
+    // 合并对象，挂载this上
+    Object.assign(this, defOpts, opts)
+    // 添加属性，用来判断播放暂停，默认true是暂停
+    this.isPaused = true
+    // 得到所有弹幕消息
+    this.barrages = this.data.map(item => new Barrage(item, this))
+  }
+  // 创建canvas绘制的弹幕
+  render() {
+    // 绘制的第一步,清除原来的画布
+    this.clear()
+    // 渲染
+    this.renderBarrage()
+  }
+
+  clear() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+  }
+
+  renderBarrage(){
+    // 首先拿到当前视频播放的时间
+    let time = this.video.currentTime
+    this.barrages.forEach(barrage => {
+      if (time >= barrage.time) {
+        // 如果弹幕没有初始化完成,就先初始化
+        if (!barrage.isInit) {
+          barrage.init()
+          barrage.init = true
+        }
+
+        // 弹幕从右往左渲染
+        barrage.x -= barrage.speed
+        barrage.renderOnce() //渲染每一条弹幕
+      }
+    })
+  }
+}
+
+class Barrage {
+  constructor(obj, ctx) {
+
   }
 }
