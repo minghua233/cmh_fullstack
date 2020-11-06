@@ -76,7 +76,7 @@ class CanvasBarrage {
     // 首先拿到当前视频播放的时间
     let time = this.video.currentTime
     this.barrages.forEach(barrage => {
-      if (time >= barrage.time) {
+      if (time >= barrage.time && !barrage.flag) {
         // 如果弹幕没有初始化完成,就先初始化
         if (!barrage.isInit) {
           barrage.init()
@@ -95,8 +95,20 @@ class CanvasBarrage {
   }
 }
 
+// 初始化弹幕的类
+// 让每一条弹幕里面的属性能够生效
 class Barrage {
   constructor(obj, ctx) {
-
+    this.value = obj.value // 弹幕的出现
+    this.time = obj.time // 弹幕出现的时间
+    this.obj = obj
+    this.context = ctx
+  }
+  // 初始化弹幕
+  init() {
+    this.color = this.obj.color || this.context.color
+    this.speed = this.obj.speed || this.context.speed
+    this.opacity = this.obj.opacity || this.context.opacity
+    this.fontSize = this.obj.fontSize || this.context.fontSize
   }
 }
