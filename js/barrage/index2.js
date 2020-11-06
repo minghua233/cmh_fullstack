@@ -20,7 +20,7 @@ let data = [{
   {
     value: '我的咖啡，糖不用太多',
     time: 20
-  }
+  },
 ]
 
 let canvas = document.getElementById('canvas')
@@ -30,12 +30,12 @@ let $btn = document.getElementById('btn')
 let $color = document.getElementById('color')
 let $range = document.getElementById('range')
 
+
 // 创建渲染弹幕的类
 class CanvasBarrage {
   constructor(canvas, video, opts = {}) {
     if (!canvas || !video) return
-
-    // 将传进来发参数挂载this上
+    // 将传进来的参数挂载this上
     this.video = video
     this.canvas = canvas
     // 设置canvas的宽高和video宽高一致
@@ -45,7 +45,7 @@ class CanvasBarrage {
     // 获取画布，操作画布
     this.ctx = canvas.getContext('2d')
 
-    // 设置默认参数，如果用户没传我就给它带上
+    // 设置默认参数，如果用户没传我就给给它带上
     let defOpts = {
       color: '#e91e63',
       speed: 1.5,
@@ -53,18 +53,18 @@ class CanvasBarrage {
       fontSize: 20,
       data: []
     }
-    // 合并对象，挂载this上
+    // 合并对象 再挂载到this上
     Object.assign(this, defOpts, opts)
-    // 添加属性，用来判断播放暂停，默认true是暂停
+    // 添加属性， 用来判断播放暂停， 默认true是暂停
     this.isPaused = true
-    // 得到所有弹幕消息
+    // 得到所有的弹幕消息
     this.barrages = this.data.map(item => new Barrage(item, this))
     // 渲染弹幕
     this.render()
   }
-  // 创建canvas绘制的弹幕
+  // 渲染canvas绘制的弹幕
   render() {
-    // 绘制的第一步,清除原来的画布
+    // 绘制的第一步，清除原来的画布
     this.clear()
     // 渲染
     this.renderBarrage()
@@ -82,7 +82,7 @@ class CanvasBarrage {
     let time = this.video.currentTime
     this.barrages.forEach(barrage => {
       if (time >= barrage.time && !barrage.flag) {
-        // 如果弹幕没有初始化完成,就先初始化
+        // 如果弹幕没有初始化完成，就先初始化
         if (!barrage.isInit) {
           barrage.init()
           barrage.isInit = true
@@ -90,7 +90,7 @@ class CanvasBarrage {
 
         // 弹幕从右往左渲染
         barrage.x -= barrage.speed
-        barrage.renderOnce() //渲染每一条弹幕
+        barrage.renderOnce() // 渲染每一条弹幕
 
         if (barrage.x < -barrage.width) {
           barrage.flag = true
@@ -98,17 +98,13 @@ class CanvasBarrage {
       }
     });
   }
-
-  add(obj) {
-    this.barrages.push(new Barrage(obj, this))
-  }
 }
 
 // 初始化弹幕的类
-// 让每一条弹幕里面的属性能够生效
+// 让每一条弹幕里面属性都能生效
 class Barrage {
   constructor(obj, ctx) {
-    this.value = obj.value // 弹幕的出现
+    this.value = obj.value // 弹幕的内容
     this.time = obj.time // 弹幕出现的时间
     this.obj = obj
     this.context = ctx
@@ -143,29 +139,18 @@ class Barrage {
   // 渲染每一条弹幕
   renderOnce() {
     this.context.ctx.font = `${this.fontSize}px Arial`
-    this.context.ctx.fillStyle = this.color
+    this.context.ctx.fillStyle = this.color;
     // 绘制文字
     this.context.ctx.fillText(this.value, this.x, this.y)
   }
+
 }
+
 
 let canvasBarrage = new CanvasBarrage(canvas, video, {
   data
 })
-
 video.addEventListener('play', () => {
   canvasBarrage.isPaused = false
   canvasBarrage.render()
 })
-
-// 发弹幕 
-$btn.addEventListener('click', send)
-function send() {
-  let value = $txt.value
-  let time = video.currentTime
-  let color = $color.value
-  let fontSize = $range.value
-  let obj = { value, time, color, fontSize}
-  canvasBarrage.add(obj)
-  $txt.value = ''
-}
