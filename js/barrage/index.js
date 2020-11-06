@@ -72,7 +72,7 @@ class CanvasBarrage {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
   }
 
-  renderBarrage(){
+  renderBarrage() {
     // 首先拿到当前视频播放的时间
     let time = this.video.currentTime
     this.barrages.forEach(barrage => {
@@ -110,5 +110,14 @@ class Barrage {
     this.speed = this.obj.speed || this.context.speed
     this.opacity = this.obj.opacity || this.context.opacity
     this.fontSize = this.obj.fontSize || this.context.fontSize
+
+    // 计算每条弹幕的宽度
+    let p = document.createElement('p')
+    p.style.fontSize = this.fontSize + 'px'
+    p.innerHTML = this.value
+    this.width = p.clientWidth
+    document.body.removeChild(p)
+
+    
   }
 }
