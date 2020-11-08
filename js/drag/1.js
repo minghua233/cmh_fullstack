@@ -11,4 +11,4 @@ var isValid = function (str) {
   return true
 }
 
-console.log(isValid('上海自来水来自海上'));
+console.log(isValid('上海自来'));
