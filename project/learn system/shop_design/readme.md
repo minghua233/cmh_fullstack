@@ -18,4 +18,23 @@
   - 礼品卡模块
 
 ## 地址模块
-  - 首先，用户设置的默认地址
+  - 首先，用户设置的默认地址 字段
+  - 如果没有设置默认地址，则返回最近下单的地址
+
+### 设计表结构
+consignee 收货人姓名
+email     邮箱
+mobile    手机号
+便于派送
+country {id: 86, name: "中国"}
+province
+city
+county
+street
+detailed_address
+postal_code
+address_id
+is_default Boolean
+label   五姑娘家
+longitude
+latitude
