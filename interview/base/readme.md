@@ -8,3 +8,6 @@ Boolean null undefined number string symbol
 # 原始类型和对象类型有什么差别？
 原始类型存的是值
 对象类型存的是地址（指针）
+
+# typeof能正确判断的类型是？
+typeof只能判断原始类型，null除外
