@@ -67,3 +67,9 @@ for (var i = 1; i <= 5; i++) {
 //     }, i * 1000)
 //   })(i)
 // }
+// 3. 使用setTimeout的第三个参数，作为回调函数的实参传入
+// for (var i = 1; i <= 5; i++) {
+//   setTimeout(function timer(j) {
+//     console.log(j);
+//   }, i * 1000, i)
+// }
