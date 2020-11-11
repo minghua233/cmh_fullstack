@@ -52,6 +52,13 @@
     <div class="progress-button"></div>
   </div>
   <script>
+    // 面向对象
+    // function Progress() {
+    //   new Progress('.progress-bar')
+    //   new Progress('.progress-bar-2')
+    // }
+
+
     const btn = document.querySelector('.progress-button')
     const progress = document.querySelector('.progress')
     const progressBar = document.querySelector('.progress-bar')
@@ -66,8 +73,15 @@
       const touch = event.touches[0]
       // 捏
       const diffX = touch.clientX - downX
-      btn.style.left = `${diffX}px`
-      progress.style.width = `${diffX / width *100}%`
+      let move = diffX + downLeft
+      if (move < 0) {
+        move = 0
+      } else if (move > width) {
+        move = width
+      }
+      btn.style.left = `${move}px`
+      progress.style.width = `${move / width *100}%`
+      console.log(move / width *100nnb);
     })
   </script>
 </body>
