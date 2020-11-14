@@ -22,6 +22,13 @@ const server = http.createServer((req, res) => {
     }
     fs.readFile('.' + req.url, (err, file) => {
       if (!err) {
+        const path = require('path')
+        const extname = path.extname('.' + req.url)
+        const map = {
+          '.js': 'application/javascript;charset=utf-8',
+          '.md': 'text/plain;charset=utf-8'
+        }
+        res.setHeader('Content-Type', `${map[extname]}`)
         res.end(file)
       }
     })
