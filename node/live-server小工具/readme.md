@@ -20,3 +20,37 @@ key: value
 百度一下
 </body>
 <html>
+
+块级
+- 独占一行
+- 能设置宽高
+(BFC): 块级格式上下文
+
+行内
+- 水平方向都在一行上面
+- 垂直方向: 以当前行的基线(base-line)对齐
+- 非置换元素不能设置宽高
+- 置换元素能设置宽高
+- 
+
+img -> 行内 -> 设置宽高
+置换元素: 
+内容不受css控制
+```html
+<img src="" /><!-- 由src决定 -->
+<canvas></canvas><!-- 默认宽高300*150 -->
+<input/>
+<iframe src=""></iframe>
+<script src=""></script>
+```
+
+非置换元素
+```html
+<div>
+  <div></div>
+</div>
+<span>文字</span>
+```
+
+词法(静态)作用域: js c c++
+动态作用域: bash
