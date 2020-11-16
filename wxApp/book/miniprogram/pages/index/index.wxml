@@ -1,14 +1,13 @@
-<!--pages/index/index.wxml-->
+<!-- pages/index/index.wxml -->
 <view class="container">
-    <!-- 我的信息 -->
-    <view class="userinfo">
-        <button 
-        open-type="getUserInfo" 
-        bindgetuserinfo="getUserInfo"
-        wx:if="{{!hasUserInfo}}">点击获取头像</button>
-        <block wx:else>
-            <image mode="widthFix" src="{{avatarUrl}}" class="userinfo-avatar"/>
-        </block>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </view>
+  <!-- 我的信息 -->
+  <view class="userinfo">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" wx:if="{{!hasUserInfo}}">
+      点击获取头像
+    </button>
+    <block wx:else>
+      <image mode="widthFix" src="{{avatarUrl}}" class="userinfo-avatar" />
+    </block>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
 </view>
