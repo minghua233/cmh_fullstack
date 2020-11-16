@@ -7,12 +7,22 @@ Page({
   data: {
 
   },
-
+  getList() {
+    wx.showLoading({
+      title: "正在加载"
+    })
+    wx.cloud.callFunction({
+      name: 'getList',
+      data: {}
+    }).then(res => {
+      console.log(res);
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getList()
   },
 
   /**

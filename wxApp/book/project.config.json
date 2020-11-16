@@ -36,7 +36,7 @@
   },
   "appid": "wx517bb90b73272aa7",
   "projectname": "book",
-  "libVersion": "2.8.1",
+  "libVersion": "2.14.0",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
