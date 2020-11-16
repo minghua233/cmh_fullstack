@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    hotData: []
   },
   getList() {
     wx.showLoading({
@@ -16,6 +16,11 @@ Page({
       data: {}
     }).then(res => {
       console.log(res);
+      wx.hideLoading();
+      const result = res.result || {}
+      this.setData({
+        hotData: result.hotData
+      })
     })
   },
   /**
