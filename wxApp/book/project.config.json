@@ -10,7 +10,7 @@
     "minified": true,
     "newFeature": true,
     "coverView": true,
-    "nodeModules": false,
+    "nodeModules": true,
     "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
@@ -34,7 +34,7 @@
     "packNpmRelationList": [],
     "minifyWXSS": true
   },
-  "appid": "wx9b78cbba9a1ed341",
+  "appid": "wx517bb90b73272aa7",
   "projectname": "book",
   "libVersion": "2.8.1",
   "simulatorType": "wechat",
