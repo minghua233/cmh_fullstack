@@ -1,3 +1,9 @@
+// 对对象按年龄排序
+// {age: 18} {age: 20} {age: 15}
+// let arr2 = [{age: 18} {age: 20} {age: 15}]
+// arr2.sort((a, b) => {
+//   return a.age - b.age
+// })
 // [5, 3, 4, -1, -2, 9, -8]
 function cb(a, b) { // 控制排序升序还是降序
   return a - b
