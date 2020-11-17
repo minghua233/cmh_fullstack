@@ -5,13 +5,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    bookDetailData: {}
   },
 
+  getSection(url) {
+    wx.showLoading({
+      title: '正在加载'
+    })
+    wx.cloud.callFunction({
+      name: 'bookSection',
+      data: {
+        url: url
+      }
+    }).then(res => {
+      // console.log(res);
+      wx.hideLoading()
+      const {result} = res
+      this.setData({
+        bookDetailData: result.bookDetailData
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // console.log(options);
+    const {url} = options
+    this.getSection(url)
 
   },
 

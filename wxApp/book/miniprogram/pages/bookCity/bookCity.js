@@ -33,6 +33,7 @@ Page({
     //   url: '',
     // })
     let url = e.currentTarget.dataset.url
+    // console.log(url);
     wx.navigateTo({
       url: `../bookSection/bookSection?url=${url}`
     })
