@@ -47,10 +47,10 @@
 <!-- 分页 -->
 <view class="listPage">
   <view class="pre">
-    <button type="warn" size="mini" bindtap="prePage">上一页</button>
+    <button type="warn" size="mini" bindtap="prePage" disabled="{{preAble}}">上一页</button>
   </view>
   <view class="section">
-    <picker mode="selector" range="{{pageArray}}" range-key="{{'num'}}" value="{{page - 1}}">
+    <picker mode="selector" range="{{pageArray}}" range-key="{{'num'}}" value="{{page - 1}}" bindchange="changePage">
       <view class="picker">
         第{{pageArray[page].num - 1}}页
       </view>
@@ -58,6 +58,6 @@
       
   </view>
   <view class="next">
-    <button type="warn" size="mini" bindtap="nextPage">下一页</button>
+    <button type="warn" size="mini" bindtap="nextPage" disabled="{{nextAble}}">下一页</button>
   </view>
 </view>
