@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bookDetailData: {}
+    bookDetailData: {},
+    lastData: [],
+    pageData: [],
+    pageArray: [],
+    page: 1, // 当前页
+    pre: '',
+    next: ''
   },
 
   getSection(url) {
@@ -22,9 +28,22 @@ Page({
       wx.hideLoading()
       const {result} = res
       this.setData({
-        bookDetailData: result.bookDetailData
+        bookDetailData: result.bookDetailData,
+        lastData: result.lastData,
+        pageData: result.pageData,
+        pageArray: result.pageArray,
+        pre: result.pre,
+        next: result.next
       })
     })
+  },
+
+  // 上一页
+  prePage() {
+    this.getSection(this.data.pre)
+  },
+  nextPage() {
+    this.getSection(this.data.next)
   },
   /**
    * 生命周期函数--监听页面加载
