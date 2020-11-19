@@ -47,7 +47,7 @@ exports.main = async (event, context) => {
     obj['sectionName'] = $(lastsection[i]).find('a').text()
     obj['sectionUrl'] = $(lastsection[i]).find('a').attr('href')
     lastData.push(obj)
-  }
+  } 
 
   // 本页章节
   const pagesection = $('.book_last').eq(1).find('dd');

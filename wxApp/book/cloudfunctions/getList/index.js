@@ -9,10 +9,10 @@ charset(superagent);
 cloud.init()
 // 云函数入口函数
 exports.main = async (event, context) => {
-  let serverUrl = "https://wap.biqiuge8.com/";
+  let serverUrl = "https://wap.biqiuge8.com/"
   const result = await superagent.get(serverUrl).charset('gb2312'); // .charset('gb2312')取决于网页的编码方式
   const data = result.text || ''
-  const $ = cheerio.load(result.text)
+  const $ = cheerio.load(data)
 
   // 热门推荐
   let hotList = $('.hot').find('.image')
