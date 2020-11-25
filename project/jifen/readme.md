@@ -38,5 +38,5 @@
     channel_id    赚取或消费渠道ID 1.下单 2.评论
     event_id      驱动的事件ID
     credit        积分（赚取为正值，消费为负值）
-    create_time 
+    create_time   获取时间
     expired_time  过期时间 
