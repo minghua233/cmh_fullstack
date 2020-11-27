@@ -4,11 +4,13 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import home1 from '../views/home1.vue'
 import home2 from '../views/home2.vue'
+import Detail from '@/views/Detail'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [{
+  routes: [
+    {
       path: '/',
       name: "Home",
       component: Home,
@@ -30,6 +32,11 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About
+    },
+    {
+      path: '/detail',
+      name: 'Detail',
+      component: Detail
     }
   ]
-})
+})                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

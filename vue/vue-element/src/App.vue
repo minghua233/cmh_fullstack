@@ -20,10 +20,23 @@ export default {
 </script>
 
 <style>
-p{
+.fade-enter {
+  opacity: 0;
+}
+.fade-leave {
+  opacity: 1;
+}
+.fade-enter-active {
+  transition: opacity 1s;
+}
+.fade-leave-active {
+  opacity: 0;
+  /* transition: opacity 0.5s; */
+}
+p {
   text-align: center;
 }
-.page{
+.page {
   text-align: center;
 }
 </style>
