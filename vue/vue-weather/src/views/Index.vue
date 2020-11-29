@@ -36,7 +36,7 @@ export default {
     initMap() { // 获取当前城市
 
     },
-    getCurrentCityData () { // 查询
+    getCurrentCityData () { // 查询天气
 
     }
   }
