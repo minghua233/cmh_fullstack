@@ -97,7 +97,9 @@ export default {
         weather.getForecast(cityName, function(err, data) {
           console.log(err, data);
           _this.futureMapData = data.forecasts;
-          
+          _this.futureMapData.map((item) => {
+            _this.seriesData.push(item.dayTemp)
+          })
           _this.initEchart();
         });
       });
@@ -137,7 +139,7 @@ export default {
         series: [
           {
             type: "line",
-            data: [5, 20, 36, 10]
+            data: this.seriesData
           }
         ]
       };
