@@ -48,7 +48,8 @@ export default {
     return {
       localTime: "",
       mapData: {},
-      futureMapData: []
+      futureMapData: [],
+      seriesData: []
     };
   },
   created() {
@@ -96,8 +97,51 @@ export default {
         weather.getForecast(cityName, function(err, data) {
           console.log(err, data);
           _this.futureMapData = data.forecasts;
+          
+          _this.initEchart();
         });
       });
+    },
+    initEchart() {
+      let dom = this.$refs.echartContainer;
+      var myChart = echarts.init(dom);
+      let app = {},
+        option = null;
+      option = {
+        xAxis: {
+          type: "category",
+          data: ["今天", "明天", "后天", "三天后"],
+          axisLine: {
+            lineStyle: {
+              color: "#fff"
+            }
+          },
+          axisTick: {
+            show: false
+          }
+        },
+        yAxis: {
+          show: false,
+          type: "value"
+        },
+        tooltip: {
+          trigger: "axis",
+          formatter: function(params) {
+            var relVal = params[0].name;
+            for (var i = 0, l = params.length; i < l; i++) {
+              relVal += params[i].value + "°C";
+            }
+            return relVal;
+          }
+        },
+        series: [
+          {
+            type: "line",
+            data: [5, 20, 36, 10]
+          }
+        ]
+      };
+      myChart.setOption(option);
     }
   }
 };
@@ -144,6 +188,10 @@ export default {
         color: white;
       }
     }
+  }
+  .echart-container {
+    width: 100%;
+    height: 50vh;
   }
 }
 </style>
