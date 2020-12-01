@@ -98,4 +98,16 @@ export default {
       bottom 14px
       display flex
       align-items center
+      padding 0 8px
+      height 24px
+      line-height 24px
+      text-align center
+      border-radius 14px
+      background $color-background-sss
+      .count
+        font-size $fontsize-small-s
+      .icon-keyboard_arrow_right
+        margin-left 2px
+        line-height 24px
+        font-size $fontsize-small-s
 </style>
