@@ -1,0 +1,11 @@
+<script>
+  let reg = /a/g
+  let str = 'aaa'
+  // lastIndex 每次最后一个位置
+  console.log(reg.test(str));
+  console.log(reg.test(str));
+  console.log(reg.test(str));
+  console.log(reg.lastIndex);
+  console.log(reg.test(str)); // false 从3开始往后匹配，3 后面没内容 false
+  console.log(reg.test(str)); // true 从头开始匹配
+</script>
