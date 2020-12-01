@@ -57,4 +57,7 @@ export default {};
         display flex
         align-items center
         margin-bottom 8px
+        .brand
+          width 30px
+          height 18px
 </style>
