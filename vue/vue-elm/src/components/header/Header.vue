@@ -17,9 +17,16 @@
           蜂鸟专送/38分钟送达
         </div>
         <div class="support">
-          
+          <support-ico
+            :size=1
+            :type=0
+          ></support-ico>
           <span class="text">在线支付满28减5</span>
         </div>
+      </div>
+      <div class="support-count">
+        <span class="count">5个</span>
+        <i class="icon-keyboard_arrow_right"></i>
       </div>
     </div>
     <div class="bulletin-wrapper">
@@ -29,7 +36,12 @@
 </template>
 
 <script>
-export default {};
+import SupportIco from "@/components/support-ico/Support-ico.vue";
+export default {
+  components: {
+    SupportIco
+  }
+};
 </script>
 <style lang="stylus">
 @import '../../common/stylus/variable.styl'
@@ -71,5 +83,19 @@ export default {};
       .description
         font-size $fontsize-small
         margin-bottom 8px
-        line-height 18px
+        line-height 12px
+      .support
+        display flex
+        align-items center
+        &-ico
+          margin-right 4px
+        .text
+          line-height 12px
+          font-size $fontsize-small-s
+    .support-count
+      position absolute
+      right 12px
+      bottom 14px
+      display flex
+      align-items center
 </style>
