@@ -17,7 +17,10 @@
           蜂鸟专送/38分钟送达
         </div>
         <div class="support">
-          <img src="./decrease_1@2x.png" alt="">
+          <img
+            src="./decrease_1@2x.png"
+            alt=""
+          >
           <span class="text">在线支付满28减5</span>
         </div>
       </div>
@@ -31,6 +34,27 @@
 <script>
 export default {};
 </script>
-
-<style>
+<style lang="stylus">
+@import '../../common/stylus/variable.styl'
+.header
+  position relative
+  overflow hidden
+  color $color-white
+  background $color-background-ss
+  .content-wrapper
+    position relative
+    display flex
+    padding 24px 12px 18px 24px
+    align-items center
+    .avatar
+      flex 0 0 64
+      margin-right 16px
+      img
+        border-radius 2px
+    .content
+      flex 1
+      .title
+        display flex
+        align-items center
+        margin-bottom 8px
 </style>
