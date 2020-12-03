@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <span>
+      <h2></h2>
+    </span>
+    <h2></h2>
+  </div>
+  <h2></h2>
+  <!-- DOM 树 -->
+  <script>
+    const app = document.getElementById('app')
+    // app 里面 h2 标签有几个
+    function walk(node) {
+      console.log(node)
+      // left right
+      // walk(left)
+      // walk(right)
+      // 深度优先：前序 中序 后序 DFS
+      // 广度优先：层序 BFS
+      if (node.childNodes) {
+        for (let child of node.childNodes) {
+          walk(child)
+        }
+      }
+    }
+    walk(app)
+  </script>
+</body>
+
+</html>
