@@ -42,11 +42,14 @@
         height="100%"
       >
     </div>
+    <header-detail :seller="seller"></header-detail>
   </div>
+  
 </template>
 
 <script>
 import SupportIco from "@/components/support-ico/Support-ico.vue";
+import HeaderDetail from "@/components/header-detail/Header-detail";
 export default {
   props: {
     seller: {
@@ -57,7 +60,8 @@ export default {
     }
   },
   components: {
-    SupportIco
+    SupportIco,
+    HeaderDetail
   }
 };
 </script>
