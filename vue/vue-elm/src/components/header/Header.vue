@@ -5,39 +5,39 @@
         <img
           width="64"
           height="64"
-          src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2944606985,3722907313&fm=11&gp=0.jpg"
+          :src="seller.avatar"
         >
       </div>
       <div class="content">
         <div class="title">
           <span class="brand"></span>
-          <span class="name">粥品香坊（回龙观）</span>
+          <span class="name">{{seller.name}}</span>
         </div>
         <div class="description">
-          蜂鸟专送/38分钟送达
+          {{seller.description}}/{{seller.deliveryTime}}分钟送达
         </div>
-        <div class="support">
+        <div class="support" v-if="seller.supports">
           <support-ico
             :size=1
-            :type=0
+            :type="seller.supports[0].type"
           ></support-ico>
-          <span class="text">在线支付满28减5</span>
+          <span class="text">{{seller.supports[0].description}}</span>
         </div>
       </div>
-      <div class="support-count">
-        <span class="count">5个</span>
+      <div class="support-count" v-if="seller.supports">
+        <span class="count">{{seller.supports.length}}</span>
         <i class="icon-keyboard_arrow_right"></i>
       </div>
     </div>
     <div class="bulletin-wrapper">
       <span class="bulletin-title"></span>
-      <span class="bulletin-text">粥品香坊其烹饪粥料的秘方源于中国千年古法，在融和现代制作工艺，由世界烹饪大师屈浩先生领衔研发。坚守纯天然、0添加的良心品质深得消费者青睐，发展至今成为粥类的引领品牌。是2008年奥运会和2013年园博会指定餐饮服务商。</span>
+      <span class="bulletin-text">{{seller.bulletin}}</span>
       <i class="icon-keyboard_arrow_right"></i>
     </div>
     <!-- 背景 -->
     <div class="background">
       <img
-        src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2944606985,3722907313&fm=11&gp=0.jpg"
+        :src="seller.avatar"
         width="100%"
         height="100%"
       >
@@ -48,6 +48,14 @@
 <script>
 import SupportIco from "@/components/support-ico/Support-ico.vue";
 export default {
+  props: {
+    seller: {
+      type: Object,
+      default() {
+        return {}
+      }
+    }
+  },
   components: {
     SupportIco
   }
