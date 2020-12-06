@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" @click="showDetail">
     <div class="content-wrapper">
       <div class="avatar">
         <img
@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="support-count" v-if="seller.supports">
-        <span class="count">{{seller.supports.length}}</span>
+        <span class="count">{{seller.supports.length}}个</span>
         <i class="icon-keyboard_arrow_right"></i>
       </div>
     </div>
@@ -42,7 +42,7 @@
         height="100%"
       >
     </div>
-    <header-detail :seller="seller"></header-detail>
+    <header-detail :seller="seller" v-show="detailVisible" @hide="hideDetail"></header-detail>
   </div>
   
 </template>
@@ -51,6 +51,11 @@
 import SupportIco from "@/components/support-ico/Support-ico.vue";
 import HeaderDetail from "@/components/header-detail/Header-detail";
 export default {
+  data() {
+    return {
+      detailVisible: false
+    }
+  },
   props: {
     seller: {
       type: Object,
@@ -62,6 +67,14 @@ export default {
   components: {
     SupportIco,
     HeaderDetail
+  },
+  methods: {
+    showDetail() {
+      this.detailVisible = true
+    },
+    hideDetail(e) {
+      this.detailVisible = e
+    }
   }
 };
 </script>
