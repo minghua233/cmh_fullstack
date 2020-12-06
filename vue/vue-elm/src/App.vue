@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Header :seller='seller'></Header>
+    <Header :seller="seller"></Header>
     <div class="tab">
       <div class="tab-wrapper">
         <router-link to="/">商品</router-link>
@@ -12,7 +12,7 @@
         <router-link to="/seller">商家</router-link>
       </div>
     </div>
-    <router-view></router-view>
+    <router-view :seller="seller"></router-view>
   </div>
 </template>
 
@@ -24,21 +24,21 @@ export default {
   data() {
     return {
       seller: {
-        id: qs.parse(location.search).id
-      }
+        id: qs.parse(location.search).id,
+      },
     };
   },
   components: {
-    Header
+    Header,
   },
   created() {
     getSeller({
-      id: this.seller.id
-    }).then(seller => {
+      id: this.seller.id,
+    }).then((seller) => {
       console.log(seller);
       this.seller = Object.assign({}, this.seller, seller);
     });
-  }
+  },
 };
 </script>
 
@@ -56,9 +56,9 @@ export default {
     a
       text-decoration none
       display inline-block
-      width: 100%;
+      width 100%
       color #666
     .router-link-exact-active
       color $color-red
-      border-bottom: 2px solid $color-red;
+      border-bottom 2px solid $color-red
 </style>
