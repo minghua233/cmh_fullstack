@@ -31,3 +31,8 @@ http://http://localhost:8080 -> :3000 跨域
 
 - 基于mongodb 数据流 -> MVC node(express) -> Vue 界面
   1. model层的构建
+    这是一个精简版的model层 model目录有了
+    index.js 所有的模型定义在这里
+    mongoose.Schema 根据数据库结构定义
+    生成类
+  2. postman 测试一下数据
