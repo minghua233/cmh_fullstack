@@ -30,3 +30,4 @@ http://http://localhost:8080 -> :3000 跨域
   6. App.all 后端配置解决的
 
 - 基于mongodb 数据流 -> MVC node(express) -> Vue 界面
+  1. model层的构建
