@@ -33,7 +33,6 @@ export default {
     ...mapGetters(['newCount'])
   },
   methods: {
-    test() { },
     ...mapMutations(['reduce']),
     ...mapActions(['addAction'])
   }
