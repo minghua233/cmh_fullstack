@@ -36,3 +36,4 @@ http://http://localhost:8080 -> :3000 跨域
     mongoose.Schema 根据数据库结构定义
     生成类
   2. postman 测试一下数据
+    - 路由 

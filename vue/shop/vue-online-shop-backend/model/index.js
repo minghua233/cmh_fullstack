@@ -23,8 +23,8 @@ const manufacturerSchema = Schema({
   name: String
 })
 
-const Product = module('Product', productSchema)
-const Manufacturer = module('Manufacturer', manufacturerSchema)
+const Product = model('Product', productSchema)
+const Manufacturer = model('Manufacturer', manufacturerSchema)
 
 // es6 js export default {} 前端
 // es5 commonJS 模块方案 node 稳定性为主
