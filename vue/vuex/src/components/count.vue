@@ -5,7 +5,7 @@
     <h1>{{newCount}}</h1>
     <!-- <h1>{{msg}}</h1> -->
     <p>
-      <button @click="addAction">add</button>
+      <button @click="addAction(5)">add</button>
       <button @click="$store.commit('reduce')">reduce</button>
     </p>
   </div>

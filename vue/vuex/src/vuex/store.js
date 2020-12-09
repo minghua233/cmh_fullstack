@@ -20,8 +20,14 @@ const getters = {
   }
 }
 const actions = {
-  addAction(context) {  
-    context.commit('add', 5)
+  // addAction(context) {  
+  //   context.commit('add', 5)
+  // }
+  addAction(context, n) {
+    setTimeout(() => {
+      context.commit('add', n)
+    }, 3000)
+    console.log('我先出现');
   }
 }
 export default new Vuex.Store({
