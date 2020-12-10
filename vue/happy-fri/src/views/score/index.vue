@@ -2,7 +2,7 @@
   <div class="score">
     <div class="your_scores_container">
       <header class="your_scores">
-        <span class="score_num">100</span>
+        <span class="score_num">{{score}}</span>
         <span class="fenshu">分！</span>
       </header>
       <div class="result_tip">提示</div>
@@ -13,8 +13,31 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-
+  data() {
+    return {
+      score: 0
+    }
+  },
+  computed: {
+    ...mapState(['answerId', 'itemDetail']),
+    average() {
+      return 100 / this.itemDetail.length
+    }
+  },
+  created() {
+    this.computedScore()
+  },
+  methods: {
+    computedScore() {
+      this.answerId.forEach((item) => {
+        if (item) {
+          this.score += this.average
+        }
+      })
+    }
+  },
 }
 </script>
 

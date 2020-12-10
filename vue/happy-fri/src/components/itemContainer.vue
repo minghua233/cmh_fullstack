@@ -28,7 +28,7 @@
               class="item_list"
               v-for="(item, index) in itemDetail[itemNum-1].topic_answer"
               :key="index"
-              @click="choosed(index, item.topic_answer_id)"
+              @click="choosed(index, item.is_standard_answer)"
             >
               <span
                 class="option_style"
