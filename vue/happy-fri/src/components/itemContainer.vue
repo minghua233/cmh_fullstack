@@ -88,7 +88,7 @@ export default {
         // 清除choosedNum
         // 保存答案，题目索引+1，跳到下一题
         this.choosedNum = null
-
+        
       } else {
         alert('您还没有选择答案哦！')
       }
