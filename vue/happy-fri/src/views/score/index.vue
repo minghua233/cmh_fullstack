@@ -5,7 +5,7 @@
         <span class="score_num">{{score}}</span>
         <span class="fenshu">分！</span>
       </header>
-      <div class="result_tip">提示</div>
+      <div class="result_tip">{{scoreTips}}</div>
     </div>
     <div class="share_button"></div>
   </div>
@@ -17,7 +17,15 @@ import { mapState } from 'vuex'
 export default {
   data() {
     return {
-      score: 0
+      score: 0,
+      scoreTipsArr: [
+        '你说，是不是把知识都还给小学老师了？',
+        '还不错，但还需要继续加油哦！',
+        '不要嘚瑟还有进步的空间！',
+        '智商离爆表只差一步了！',
+        '你也太聪明啦，葡萄之家欢迎你！'
+      ],
+      scoreTips: ''
     }
   },
   computed: {
@@ -28,6 +36,7 @@ export default {
   },
   created() {
     this.computedScore()
+    this.getScoreTip()
   },
   methods: {
     computedScore() {
@@ -36,6 +45,11 @@ export default {
           this.score += this.average
         }
       })
+    },
+    // 根据得分显示提示
+    getScoreTip() {
+      let index = (this.score / this.average) - 1
+      this.scoreTips = this.scoreTipsArr[index]
     }
   },
 }
