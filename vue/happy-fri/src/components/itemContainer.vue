@@ -39,7 +39,10 @@
           </ul>
         </div>
       </div>
-      <span class="next_item button_style" @click="nextItem"></span>
+      <span
+        class="next_item button_style"
+        @click="nextItem"
+      ></span>
     </div>
   </section>
 
@@ -84,7 +87,8 @@ export default {
       if (this.choosedNum !== null) {
         // 清除choosedNum
         // 保存答案，题目索引+1，跳到下一题
-        
+        this.choosedNum = null
+
       } else {
         alert('您还没有选择答案哦！')
       }
