@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let pre = 0,
+      wait = 2000
+
+    function onResize() {
+      let current = Data.now()
+      if (current - pre > wait) {
+        console.log('发出请求');
+        pre = current
+      }z
+    }
+  </script>
+</body>
+
+</html>
