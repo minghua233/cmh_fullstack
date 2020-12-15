@@ -40,6 +40,7 @@ app.use(views(path.join(__dirname, './views'), {
 }))
 
 app.use(require('./routers/signin').routes())
+app.use(require('./routers/signup').routes())
 
 app.listen(config.port, () => {
   console.log('3000端口已启动');
