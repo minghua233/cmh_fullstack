@@ -49,8 +49,15 @@ let insertUser = function(value) {
   return allServices.query(_sql, value)
 }
 
+// 根据分类查找对应的文章列表
+let findNoteListByType = function(note_type) {
+  let _sql = `select * from note where note_type="${note_type}";`
+  return allServices.query(_sql)
+}
+
 module.exports = {
   userLogin,
   findUser,
-  insertUser
+  insertUser,
+  findNoteListByType
 }

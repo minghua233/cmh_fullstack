@@ -92,4 +92,28 @@ router.post('/userLogin', async (ctx, next) => {
   })
 })
 
+// 查找文章
+router.post('/findNoteListByType', async (ctx, next) => {
+  let _note_type = ctx.request.body.note_type
+  await userService.findNoteListByType(_note_type).then(res => {
+    // console.log(res);
+    let r = '';
+    if (res.length) {
+      ctx.body = {
+        code: '80010',
+        data: res,
+        mess: '操作成功'
+      }
+    } else {
+      r = 'error'
+      ctx.body = {
+        code: '80011',
+        data: r,
+        mess: '操作失败'
+      }
+    }
+  })
+})
+
+
 module.exports = router
