@@ -1,5 +1,6 @@
 const router = require('koa-router')()
 const userService = require('../controllers/mySqlConfig')
+// const util = require('../controllers/utils')
 
 router.prefix('/users')
 
@@ -45,7 +46,7 @@ router.post('/userRegister', async (ctx, next) => {
         } else {
           r = 'error'
           ctx.body = {
-            code: '80000',
+            code: '80002',
             data: r,
             mess: '注册失败'
           }
@@ -100,20 +101,80 @@ router.post('/findNoteListByType', async (ctx, next) => {
     let r = '';
     if (res.length) {
       ctx.body = {
-        code: '80010',
+        code: '80000',
         data: res,
-        mess: '操作成功'
+        mess: '查找成功'
       }
     } else {
       r = 'error'
       ctx.body = {
-        code: '80011',
+        code: '80004',
         data: r,
-        mess: '操作失败'
+        mess: '查找失败'
       }
     }
   })
 })
 
+router.post('/findNoteById', async (ctx, next) => {
+  let _note_id = ctx.request.body.note_id
+  await userService.findNoteById(_note_id).then(res => {
+    // console.log(res);
+    let r = '';
+    if (res.length) {
+      ctx.body = {
+        code: '80000',
+        data: res[0],
+        mess: '查找成功'
+      }
+    } else {
+      r = 'error'
+      ctx.body = {
+        code: '80004',
+        data: r,
+        mess: '查找失败'
+      }
+    }
+  })
+})
+
+// 发布文章
+router.post('/insertNote', async (ctx, next) => {
+  let _userId = ctx.request.body.userId;
+  let _title = ctx.request.body.title;
+  let _note_type = ctx.request.body.note_type
+  let _note_content = ctx.request.body.note_content
+  let _head_img = ctx.request.body.head_img
+  let _nickname = ctx.request.body.nickname
+  console.log(123);
+  if (!_title || !_note_type || !_note_content) {
+    ctx.body = {
+      code: '80001',
+      mess: '文章不能为空'
+    }
+    return
+  }
+  await userService.insertNewNote([_userId, _title, _note_type, _note_content, _head_img, _nickname]).then(res => {
+    let r = ''
+    if (res.affectedRows != 0) {
+      r = 'ok'
+      ctx.body = {
+        code: '80000',
+        data: r,
+        mess: '发布成功'
+      }
+    } else {
+      r = 'error'
+      ctx.body = {
+        code: '80002',
+        data: r,
+        mess: '发布失败'
+      }
+    }
+  })
+})
+
+
+router
 
 module.exports = router
