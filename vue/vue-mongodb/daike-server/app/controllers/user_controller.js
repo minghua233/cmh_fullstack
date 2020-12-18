@@ -47,6 +47,10 @@ const login = async (ctx) => {
     }
     return
   }
+  ctx.body = {
+    code: 0,
+    msg: 'error password'
+  }
 
 }
 
