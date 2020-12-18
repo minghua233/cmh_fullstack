@@ -10,6 +10,9 @@ const login = async (ctx) => {
 
   const user = await User_col.findOne({
     account: req.username
+  }, {
+    __v: 0,
+    _id: 0
   })
   if (!user) {
     ctx.status = 200
@@ -31,7 +34,7 @@ const login = async (ctx) => {
   })
   // 如果在密码表里面找到了账号相同的id
   // 判断该id对应的密码和前端传递过来的密码是否匹配
-  
+
 }
 
 module.exports = { login }
