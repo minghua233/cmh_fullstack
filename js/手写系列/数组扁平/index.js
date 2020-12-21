@@ -20,7 +20,7 @@ let arr = [1, [2, [3, 4]]]
 //   }, [])
 // }
 
-// 解构
+// 解构（最优）
 // [1, [2, [3, 4]]] -> 1, [2, [3, 4]] 先融化一层再取值
 // console.log([].concat(...arr));
 function faltten(arr) {
@@ -31,5 +31,5 @@ function faltten(arr) {
 }
 
 
-// console.log(faltten(arr));
+console.log(faltten(arr));
 
