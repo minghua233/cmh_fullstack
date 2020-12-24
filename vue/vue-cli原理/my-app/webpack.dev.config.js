@@ -22,5 +22,11 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin()
-  ]
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, './dist'),
+    port: '8888',
+    open: true,
+    hot: true
+  }
 }
