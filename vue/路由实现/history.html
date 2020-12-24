@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <ul>
+    <!-- history模式下无需加# -->
     <li><a href="/home">home</a></li>
     <li><a href="/about">about</a></li>
   </ul>
-
-  <!-- 渲染对应UI -->
+  <!-- 渲染转入页面对应UI -->
   <div id="rootView"></div>
-
   <script>
+    // 获取页面展示位置的DOM结构
     let rootView = document.getElementById('rootView')
-    window.addEventListener('DOMContentLoaded',onload)
-
+    // 通过DOMContentLoaded事件监听页面初次加载完成，执行onload函数
+    window.addEventListener('DOMContentLoaded', onload)
+    // 通过popstate事件监听活动历史记录条目更改
     window.addEventListener('popstate', () => {
+      // 将需要展示的元素放入展示位置
       rootView.innerHTML = location.pathname
-
     })
 
     function onload() {
+      // 将需要展示的元素放入展示位置
       rootView.innerHTML = location.pathname
+      // 创建链接列表，取到a标签中的href属性
       let linkList = document.querySelectorAll('a[href]')
-      linkList.forEach(el => el.addEventListener('click', function(e) {
+      // 遍历链接列表，监听链接的click事件
+      linkList.forEach(el => el.addEventListener('click', function (e) {
+        // 当点击链接时，通过preventDefault()方法阻止a标签默认的跳转事件
         e.preventDefault()
+        // 通过getAttribute()取到a标签中的href属性,并通过pushState()方法传入相应参数
         history.pushState(null, '', el.getAttribute('href'))
       }))
     }
   </script>
 </body>
+
 </html>

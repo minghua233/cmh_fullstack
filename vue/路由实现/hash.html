@@ -9,26 +9,31 @@
 
 <body>
   <ul>
+    <!-- 在链接后拼接hash字符串 -->
     <li><a href="#/home">home</a></li>
     <li><a href="#/about">about</a></li>
   </ul>
-
-  <!-- 渲染对应UI -->
+  <!-- 渲染转入页面对应UI -->
   <div id="rootView"></div>
-
   <script>
+    // 获取页面展示位置的DOM结构
     let rootView = document.getElementById('rootView')
-
+    // 通过hashchange事件监听url中hash的改变
     window.addEventListener('hashchange', () => {
+      // 通过location.hash属性获得改变后的hash值
       let hash = location.hash
-      // console.log(hash);
+      // 将需要展示的元素放入展示位置
       rootView.innerHTML = hash
     })
+    // 通过DOMContentLoaded事件监听页面初次加载完成
     window.addEventListener('DOMContentLoaded', () => {
+      // 如果当前url中没有hash值，则拼接上hash值
       if (!location.hash) {
         location.hash = '/'
       } else {
+        // 通过location.hash属性获得改变后的hash值
         let hash = location.hash
+        // 将需要展示的元素放入展示位置
         rootView.innerHTML = hash
       }
     })
