@@ -53,6 +53,7 @@ MyPromise.prototype.then = function (onFulfilled, onRejected) {
 }
 
 // 测试
+// promise本身为异步函数，先将.then()中函数放入回调函数数组中
 function a() {
   return new MyPromise((resolve, reject) => {
     setTimeout(() => {
