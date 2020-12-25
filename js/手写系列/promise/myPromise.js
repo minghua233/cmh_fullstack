@@ -9,32 +9,31 @@ function MyPromise(fn) {
   that.value = null // 存放公共变量
   that.resolvedCallbacks = [] // 存放resolved的回调函数
   that.rejectedCallbacks = [] // 存放rejected的回调函数
+  function resolve(value) { // 实现resolve
+    if (that.state === PENDING) { // 确保当前状态为pending
+      that.state = RESOLVED // 将状态设为resolved
+      that.value = value // 将变量存放至公共区域
+      that.resolvedCallbacks.map(cb => { // 遍历resolved的回调函数
+        cb(that.value) // 调用resolvedCallbacks中存在的回调函数
+      })
+    }
+  }
+  function reject(value) { // 实现reject
+    if (that.state === PENDING) { // 确保当前状态为pending
+      that.state = REJECTED // 将状态设为rejected
+      that.value = value // 将变量存放至公共区域
+      that.rejectedCallbacks.map(cb => { // 遍历rejected的回调函数
+        cb(that.value) // 调用rejectedCallbacks中存在的回调函数
+      })
+    }
+  }
   try { // 当之前代码正确执行时，执行fn
     fn(resolve, reject)
   } catch (error) { // 抛出错误
     reject(error)
   }
 }
-// 实现resolve
-function resolve(value) {
-  if (that.state === PENDING) { // 确保当前状态为pending
-    that.state = RESOLVED // 将状态设为resolved
-    that.value = value // 将变量存放至公共区域
-    that.resolvedCallbacks.map(cb => { // 遍历resolved的回调函数
-      cb(that.value) // 调用resolvedCallbacks中存在的回调函数
-    })
-  }
-}
-// 实现reject
-function reject(value) {
-  if (that.state === PENDING) { // 确保当前状态为pending
-    that.state = REJECTED // 将状态设为rejected
-    that.value = value // 将变量存放至公共区域
-    that.rejectedCallbacks.map(cb => { // 遍历rejected的回调函数
-      cb(that.value) // 调用rejectedCallbacks中存在的回调函数
-    })
-  }
-}
+
 // 实现.then()
 MyPromise.prototype.then = function (onFulfilled, onRejected) {
   const that = this // 保存this作用域
@@ -52,3 +51,21 @@ MyPromise.prototype.then = function (onFulfilled, onRejected) {
     onRejected(that.value) // 直接执行传入的onRejected函数，并取得上一个.then() resolve出的参数
   }
 }
+
+// 测试
+function a() {
+  return new MyPromise((resolve, reject) => {
+    setTimeout(() => {
+      console.log('aaaa');
+      resolve('ok')
+    }, 1000)
+  })
+}
+
+function b() {
+  setTimeout(() => {
+    console.log('bbbb');
+  })
+}
+
+a().then(b)
