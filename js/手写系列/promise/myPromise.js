@@ -8,11 +8,9 @@ function MyPromise(fn) {
   that.value = null // 存放公共变量
   that.resolvedCallbacks = [] // 存放resolved的回调函数
   that.rejectedCallbacks = [] // 存放rejected的回调函数
-  // 当之前代码正确执行时，执行fn
-  try {
+  try { // 当之前代码正确执行时，执行fn
     fn(resolve, reject)
-  } catch (error) {
-    // 抛出错误
+  } catch (error) { // 抛出错误
     reject(error)
   }
 }
