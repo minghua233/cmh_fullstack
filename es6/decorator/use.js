@@ -1,5 +1,5 @@
 class Math {
-  @log
+  // @log
   add(a, b) {
     return a + b
   }
