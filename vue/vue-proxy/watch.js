@@ -14,6 +14,8 @@ class watcher {
     return typeStr.slice(8, -1)
   }
   setData(_key) {
+    // this.$data
+    // this = {}
     Object.defineProperty(this, _key, { //Object.defineProperty(this) 把上下文指向当前的对象
       get: function () {
         return this.$data[_key]
