@@ -42,7 +42,7 @@ let target = {
   _prop: 'bar',
   prop: 'baz'
 }
-
+[[[[[[[]]]]]]]
 let handler = {
   ownKeys(target) {
     return Reflect.ownKeys(target).filter(key => key[0] !== '_')
