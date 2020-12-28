@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./index.js"></script>
+  <script>
+    ajax({
+      method: 'get',
+      url: 'https://api.github.com/users/github',
+      async: true,
+      timeout: 10000
+    }).then((res) => {
+      console.log(res);
+    })
+  </script>
+  <script>
+    let xhr = new XMLHttpRequest()
+    // 初始化
+    xhr.open('get', 'https://api.github.com/users/github')
+    // 发送请求
+    xhr.send()
+    // 设置状态变化回调处理请求结果
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // 0	未初始化。表示对象已经建立，但是尚未初始化，尚未调用 open() 方法
+        // 1	初始化。表示对象已经建立，尚未调用 send() 方法
+        // 2	发送数据。表示 send() 方法已经调用，但是当前的状态及 HTTP 头未知
+        // 3	数据传送中。已经接收部分数据，因为响应及 HTTP 头不安全，这时通过 responseBody 和 responseText 获取部分数据会出现错误
+        // 4	完成。数据接收完毕，此时可以通过 responseBody 和 responseText 获取完整的响应数据
+        console.log(xhr.responseText);
+      }
+    }
+  </script>
+</body>
+
+</html>
