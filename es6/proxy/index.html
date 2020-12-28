@@ -8,9 +8,9 @@
 </head>
 
 <body>
-  <div id="app">
-    <input type="text" id="input" />
-    <span id="span">hello</span>
+  <div>
+    <input type="text" />
+    <span>hello</span>
   </div>
 
   <script>
@@ -35,8 +35,7 @@
         span.innerHTML = newVal
       }
     })
-    
-    input.addEventListener('keyup', function(e) {
+    input.addEventListener('keyup', function (e) {
       // data.text = input.value
       data.text = e.target.value
       console.log(data.text);
