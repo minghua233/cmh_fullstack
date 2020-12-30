@@ -1,0 +1,23 @@
+<script>
+  // 构造函数继承
+  // 缺点：函数复用性差，超类型的原型中定义的方法，对子类型而言不可见
+  function Parent() {
+    this.names = ['jiushen', 'ceo']
+    Parent.prototype.getName = function () {
+      console.log(this.name);
+    }
+  }
+
+  function Child() {
+    Parent.call(this)
+  }
+
+  let child1 = new Child()
+  child1.names.push('cong')
+
+  console.log(child1);
+
+  let child2 = new Child()
+  console.log(child2);
+  // 避免了引用类型的实例被所有的实例共享
+</script>
