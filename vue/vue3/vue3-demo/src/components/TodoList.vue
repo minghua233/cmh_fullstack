@@ -34,13 +34,19 @@
       </ul>
     </section>
     <div class="footer">
-      
+      <span class="todo-count">
+        <strong>{{remaining}}</strong> left
+      </span>
+      <button
+        class="clear-completed"
+        @click="removeCompleted"
+      >clear completed</button>
     </div>
   </section>
 </template>
 
 <script>
-import { reactive, toRefs } from 'vue'
+import { computed, reactive, toRefs } from 'vue'
 export default {
   setup() {
     const state = reactive({
@@ -64,7 +70,14 @@ export default {
       state.todos.splice(index, 1)
     }
 
-    return { addTodo, ...toRefs(state), removeTodo }
+
+    let remaining = computed(() => state.todos.filter(thing => !thing.completed).length)
+
+    function removeCompleted() {
+      state.todos = state.todos.filter(thing => !thing.completed)
+    }
+
+    return { addTodo, ...toRefs(state), removeTodo, remaining, removeCompleted }
   }
 }
 </script>
