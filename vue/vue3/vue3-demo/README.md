@@ -1,24 +1,9 @@
-# vue3-demo
+# composition api
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# 新增三个组件
+fragment：vue组件不再需要根节点 
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Teleport：渲染vue的组件内容到指定的DOM节点上
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+suspense：实现异步组件
