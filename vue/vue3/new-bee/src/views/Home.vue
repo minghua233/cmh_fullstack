@@ -1,5 +1,8 @@
 <template>
-  <header class="home-header wrap">
+  <header
+    class="home-header wrap"
+    :class="{ active: headerScroll }"
+  >
     <router-link to="category">
       <van-icon
         name="wap-nav"
@@ -48,14 +51,28 @@
       <span>{{item.name}}</span>
     </div>
   </div>
-  <!-- 商品列表 -->
-  <goods-list-vue/>
+  <!-- 新品上线 -->
+  <goods-list-vue
+    :title="'新品上线'"
+    :goods="newGoodses"
+  ></goods-list-vue>
+  <!-- 热门商品 -->
+  <goods-list-vue
+    :title="'热门商品'"
+    :goods="hotGoodses"
+  ></goods-list-vue>
+  <!-- 最新推荐 -->
+  <goods-list-vue
+    :style="{paddingBottom: '100px'}"
+    :title="'最新推荐'"
+    :goods="recommendGoodses"
+  ></goods-list-vue>
 </template>
 
 <script>
 import NavbarVue from '../components/Navbar.vue'
 import SwiperVue from '../components/Swiper.vue'
-import { reactive, toRefs, onMounted } from 'vue'
+import { reactive, toRefs, onMounted, nextTick } from 'vue'
 import { getHome } from '../service/home'
 import { Toast } from 'vant'
 import GoodsListVue from '../components/GoodsList.vue'
@@ -112,7 +129,11 @@ export default {
           categoryId: 100010
         }
       ],
+      headerScroll: false, // 滚动透明判断
       swiperList: [],
+      newGoodses: [], //新品上线
+      hotGoodses: [], //热门商品
+      recommendGoodses: []  //最新推荐
     })
     onMounted(async () => {
       Toast.loading({
@@ -121,7 +142,20 @@ export default {
       })
       const { data } = await getHome()
       state.swiperList = data.carousels
+      state.newGoodses = data.newGoodses
+      state.hotGoodses = data.hotGoodses
+      state.recommendGoodses = data.recommendGoodses
+      Toast.clear()
     })
+
+    // 滚动页面事件
+    nextTick(() => {  //保证页面渲染完成才会执行
+      window.addEventListener('scroll', () => {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+        scrollTop > 100 ? state.headerScroll = true : state.headerScroll = false
+      })
+    })
+
     return {
       ...toRefs(state)
     }
