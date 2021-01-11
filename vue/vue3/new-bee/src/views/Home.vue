@@ -177,9 +177,9 @@ export default {
   font-size: 15px;
   color: #fff;
   z-index: 10000;
-  .emptymenu {
+  .emptymenu ,.van-icon {
     color: @primary;
-    text-align: center;
+    line-height: 46px;
   }
   &.active {
     background: @primary;

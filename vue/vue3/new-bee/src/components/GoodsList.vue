@@ -1,15 +1,16 @@
 <template>
   <div class="good">
-    <header class="good-header">aaaaa</header>
+    <header class="good-header">{{myTitle}}</header>
     <div class="good-box">
-      <div class="good-item">
-        <img
-          src=""
-          alt=""
-        >
+      <div
+        class="good-item"
+        v-for="item in goods"
+        :key="item.goodsId"
+      >
+        <img :src="$filters.prefix(item.goodsCoverImg)">
         <div class="good-desc">
-          <div class="title">title</div>
-          <div class="price">price</div>
+          <div class="title">{{item.goodsName}}</div>
+          <div class="price">￥{{item.sellingPrice}}</div>
         </div>
       </div>
     </div>
@@ -17,6 +18,7 @@
 </template>
 
 <script>
+import { ref, reactive, toRefs } from 'vue'
 export default {
   props: {
     title: {
@@ -31,7 +33,13 @@ export default {
     }
   },
   setup(props) {
-    
+    const myTitle = ref(props.title)
+    const goodList = reactive({ goods: props.goods })
+    console.log(props);
+    return {
+      myTitle,
+      ...toRefs(goodList)
+    }
   }
 }
 </script>
