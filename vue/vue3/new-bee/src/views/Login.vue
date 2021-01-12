@@ -104,9 +104,14 @@
 </template>
 
 <script>
-import SimpleHeaderVue from '../components/SimpleHeader.vue'
-import { reactive, ref, toRefs } from 'vue'
 import VueImageVerifyVue from '../components/VueImageVerify.vue'
+import SimpleHeaderVue from '../components/SimpleHeader.vue'
+import { setLocal } from '../common/js/utils'
+import { register, login } from '../service/users'
+import { reactive, ref, toRefs } from 'vue'
+import { Toast } from 'vant'
+import { useRouter } from 'vue-router'
+import md5 from 'js-md5'
 export default {
   components: {
     SimpleHeaderVue,
@@ -114,13 +119,15 @@ export default {
   },
   setup() {
     const verifyRef = ref(null)
+    const router = useRouter()
     const state = reactive({
       username: '',
       password: '',
       verify: '',
       type: 'login',
       username1: '',
-      password1: ''
+      password1: '',
+      imgCode: ''
     })
 
     const toggle = (v) => {
@@ -128,11 +135,39 @@ export default {
       state.type = v
       state.verify = ''
     }
-    
+
+    // 登录注册
+    const onSubmit = async () => {
+      console.log(verifyRef.value.imgCode); // 通过ref.value可以取到组件内setup函数返回的值
+      state.imgCode = verifyRef.value.imgCode || ''
+      if (state.verify.toLowerCase() !== state.imgCode.toLowerCase()) {
+        Toast.fail('验证码错误')
+        return
+      }
+      if (state.type == 'login') { // 登录
+        const { data } = await login({
+          "loginName": state.username,
+          "passwordMd5": md5(state.password)
+        })
+        // token(data)保存至本地
+        setLocal('token', data)
+        router.push('/home')
+      } else { // 注册
+        await register({
+          "loginName": state.username1,
+          "password": state.password1
+        })
+        Toast.success('注册成功')
+        state.type = 'login'
+        state.verify = ''
+      }
+    }
+
     return {
       ...toRefs(state),
       verifyRef,
-      toggle
+      toggle,
+      onSubmit
     }
   }
 }

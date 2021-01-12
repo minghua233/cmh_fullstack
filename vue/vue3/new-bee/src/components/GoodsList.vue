@@ -35,7 +35,6 @@ export default {
   setup(props) {
     const myTitle = ref(props.title)
     const goodList = reactive({ goods: props.goods })
-    console.log(props);
     return {
       myTitle,
       ...toRefs(goodList)

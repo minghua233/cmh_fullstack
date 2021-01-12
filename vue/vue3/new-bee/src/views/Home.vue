@@ -70,12 +70,14 @@
 </template>
 
 <script>
+import GoodsListVue from '../components/GoodsList.vue'
 import NavbarVue from '../components/Navbar.vue'
 import SwiperVue from '../components/Swiper.vue'
 import { reactive, toRefs, onMounted, nextTick } from 'vue'
 import { getHome } from '../service/home'
+import { getLocal } from '../common/js/utils'
 import { Toast } from 'vant'
-import GoodsListVue from '../components/GoodsList.vue'
+
 
 export default {
   name: 'home',
@@ -133,9 +135,12 @@ export default {
       swiperList: [],
       newGoodses: [], //新品上线
       hotGoodses: [], //热门商品
-      recommendGoodses: []  //最新推荐
+      recommendGoodses: [],  //最新推荐
+      isLogin: false
     })
     onMounted(async () => {
+      const token = getLocal('token')
+      if (token) state.isLogin = true
       Toast.loading({
         message: '加载中...',
         forbidClick: true,
@@ -177,7 +182,8 @@ export default {
   font-size: 15px;
   color: #fff;
   z-index: 10000;
-  .emptymenu ,.van-icon {
+  .emptymenu,
+  .van-icon {
     color: @primary;
     line-height: 46px;
   }
