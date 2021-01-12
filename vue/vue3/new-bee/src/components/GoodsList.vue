@@ -6,6 +6,7 @@
         class="good-item"
         v-for="item in goods"
         :key="item.goodsId"
+        @click="gotoDetail(item)"
       >
         <img :src="$filters.prefix(item.goodsCoverImg)">
         <div class="good-desc">
@@ -19,6 +20,7 @@
 
 <script>
 import { ref, reactive, toRefs } from 'vue'
+import { useRouter } from 'vue-router'
 export default {
   props: {
     title: {
@@ -33,9 +35,14 @@ export default {
     }
   },
   setup(props) {
+    const router = useRouter()
     const myTitle = ref(props.title)
     const goodList = reactive({ goods: props.goods })
+    const gotoDetail = (item) => {
+      router.push({ path: `/product/${item.goodsId}` })
+    }
     return {
+      gotoDetail,
       myTitle,
       ...toRefs(goodList)
     }
