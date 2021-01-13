@@ -3,7 +3,9 @@
     <van-icon
       name="arrow-left"
       @click="goBack"
+      v-if="back"
     />
+    <i v-else>&nbsp;</i>
     <div class="simple-header-name">{{name}}</div>
     <van-icon name="ellipsis" />
   </header>
@@ -18,6 +20,10 @@ export default {
     name: {
       type: String,
       default: ''
+    },
+    back:{
+      type: Boolean,
+      default: true
     }
   },
   setup(props) {
