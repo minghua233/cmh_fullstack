@@ -213,9 +213,10 @@ export default {
       font-weight: bold;
       border-right: 1px solid #666;
     }
-    .icon-search {
+    .icon-search,.van-icon  {
       padding: 0 10px;
       font-size: 17px;
+      line-height: 20px;
     }
     .search-title {
       font-size: 12px;

@@ -28,7 +28,32 @@ const routes = [
     path: '/cart',
     name: 'cart',
     component: () => import('../views/Cart.vue')
-  }
+  },
+  {
+    path: '/user',
+    name: 'user',
+    component: () => import('../views/User.vue')
+  },
+  {
+    path: '/create-order',
+    name: 'createOrder',
+    component: () => import('../views/CreateOrder.vue')
+  },
+  {
+    path: '/address',
+    name: 'address',
+    component: () => import('../views/Address.vue')
+  },
+  {
+    path: '/address-edit',
+    name: 'addressEdit',
+    component: () => import('../views/AddressEdit.vue')
+  },
+  {
+    path: '/order',
+    name: 'order',
+    component: () => import('@/views/Order.vue')
+  },
 ]
 
 const router = createRouter({

@@ -5,7 +5,10 @@
       :back="false"
     ></simple-header-vue>
     <!-- 列表 -->
-    <div class="cart-body">
+    <div
+      class="cart-body"
+      v-if="list.length > 0"
+    >
       <van-checkbox-group
         v-model="result"
         @change="groupChange"
@@ -50,7 +53,7 @@
     </div>
     <!-- 合计 -->
     <van-submit-bar
-      v-if="true"
+      v-if="list.length > 0"
       class="submit-all"
       :price="total*100"
       button-text="结算"
@@ -63,7 +66,7 @@
     </van-submit-bar>
     <div
       class="empty"
-      v-if="false"
+      v-else
     >
       <img
         class="empty-cart"
@@ -89,12 +92,15 @@ import SimpleHeaderVue from '../components/SimpleHeader.vue'
 import NavbarVue from '../components/Navbar.vue'
 import { Toast } from 'vant'
 import { getCart, modifyCart, deleteCartItem } from '../service/cart'
+import { useRouter } from 'vue-router'
+
 export default {
   components: {
     SimpleHeaderVue,
     NavbarVue
   },
   setup() {
+    const router = useRouter()
     const state = reactive({
       result: [], // 想买的商品
       list: [],
@@ -103,7 +109,6 @@ export default {
 
     onMounted(() => {
       init()
-      console.log(state.list);
     })
     const init = async () => {
       Toast.loading({
@@ -111,7 +116,6 @@ export default {
         forbidClick: true,
       })
       const { data } = await getCart({ pageNumber: 1 })
-      console.log(data);
       state.list = data
       state.result = data.map(item => item.cartItemId)
       Toast.clear()
@@ -174,13 +178,29 @@ export default {
       init()
       Toast.clear()
     }
+
+    const goTo = () => {
+      router.push({ path: '/home' })
+    }
+
+    // 结算
+    const onSubmit = () => {
+      if (state.result.length == 0) {
+        Toast.fail('请选择商品进行结算');
+        return
+      }
+      const params = JSON.stringify(state.result)
+      router.push({ path: '/create-order', query: { cartItemId: params } })
+    }
     return {
       ...toRefs(state),
       allCheck,
       total,
       groupChange,
       numChange,
-      deleteGood
+      deleteGood,
+      goTo,
+      onSubmit
     }
   }
 
