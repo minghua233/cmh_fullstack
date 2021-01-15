@@ -99,7 +99,7 @@ export default {
       cartList: [],
       cartItemId: [],
       address: {},
-      showPay: false,
+      showPay: false, // 展示弹窗
       orderNo: '' // 订单编号
     })
 
