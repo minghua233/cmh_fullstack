@@ -60,13 +60,14 @@ export default {
       // 数据回显
       if (state.type != 'add') {
         const { data: address } = await getAddressDetail(state.addressId)
+        let provinceCode = toCode(address.provinceName, 1)
+        let cityCode = toCode(address.cityName, provinceCode)
+        let areaCode = toCode(address.regionName, cityCode)
         state.addressInfo.id = address.addressId
         state.addressInfo.name = address.userName
         state.addressInfo.tel = address.userPhone
         state.addressInfo.addressDetail = address.detailAddress
-        state.addressInfo.areaCode = toCode(address.provinceName)
-        state.addressInfo.areaCode = toCode(address.cityName)
-        state.addressInfo.areaCode = toCode(address.regionName)
+        state.addressInfo.areaCode = areaCode
         state.addressInfo.isDefault = !!address.defaultFlag
       }
     })
