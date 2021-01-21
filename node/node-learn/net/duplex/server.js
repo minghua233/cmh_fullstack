@@ -2,13 +2,17 @@ const net = require('net')
 
 const server = net.createServer((socket) => {
   socket.on('data', function(buffer) {
-    console.log(buffer, buffer.toString());
-    const lessonid = buffer.readInt32BE();
+    const seqBuffer = buffer.slice(0, 2)
+    const lessonid = buffer.readInt32BE(2);
     setTimeout(() => {
-      socket.write(
+      const buffer = Buffer.concat([
+        seqBuffer,
         Buffer.from(data[lessonid])
+      ])
+      socket.write(
+        buffer
       )
-    }, 500) 
+    }, 10 + Math.random() * 1000) 
   })
 })
 
