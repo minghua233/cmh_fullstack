@@ -35,11 +35,11 @@ let index = Math.floor(Math.random() * lessonids.length)
 // 编码Buffer数据流
 let seq = 0
 function encode(index) {
-  let buffer = Buffer.alloc(8)
+  let buffer = Buffer.alloc(6)
   buffer.writeInt16BE(seq)
   console.log(seq, lessonids[index]);
   seq++
-  buffer.writeInt32BE(lessonids[index], 4)
+  buffer.writeInt32BE(lessonids[index], 2)
   return buffer
 }
 
@@ -47,8 +47,8 @@ socket.write(encode(index))
 
 // 接收到服务端往socket管道里面添加的内容
 socket.on('data', (buffer) => {
-  const seqBuffer = buffer.slice(0,4)
-  const titleBuffer = buffer.slice(4)
+  const seqBuffer = buffer.slice(0, 2)
+  const titleBuffer = buffer.slice(2)
 
   console.log(seqBuffer.readInt16BE(), titleBuffer.toString());
   index = Math.floor(Math.random() * lessonids.length)
