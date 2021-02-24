@@ -13,7 +13,7 @@ class EatItem extends Component {
   }
   shouldComponentUpdate(nextProps, nextState) {  // 4
     console.log('shouldComponentUpdate---组件发生改变之前执行');
-    // 解决子组件无意义渲染
+    // 解决子组件的无意义渲染
     if (nextProps.content !== this.props.content) {
       return true
     } else {
