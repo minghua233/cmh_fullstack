@@ -9,7 +9,7 @@ f(i, c) = f(i - 1, c)
 // 要取的第i件商品在背包中
 f(i, c) = f(i - 1, c - w[i]) + value[i]
 
-dp[i][v] = Math(dp[i - 1][v], dp[i - 1][v - w[i]] + c[i])
+dp[i][v] = Math.max(dp[i - 1][v], dp[i - 1][v - w[i]] + c[i])
 
 function knapsack(n, c, w, value) {
   // 规划一个数组来动态的保存状态
