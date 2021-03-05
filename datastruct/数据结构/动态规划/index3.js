@@ -12,7 +12,7 @@ f(i, c) = f(i - 1, c - w[i]) + value[i]
 dp[i][v] = Math.max(dp[i - 1][v], dp[i - 1][v - w[i]] + c[i])
 
 function knapsack(n, c, w, value) {
-  // 规划一个数组来动态的保存状态
+  // 规划一个数组来动态的保存结果
   const dp = (new Array(c + 1)).fill(0) // [0, 0, 0, 0, 0, 0, 3]  [0, 0, 0, 0, 0, 0, 5]
   // res 用来记录所有的组合方案中的最大值
   let res = -Infinity
