@@ -1,4 +1,5 @@
 module.exports = {
+  lintOnSave: false,
   devServer: {
     host: 'localhost',
     port: 8080,
@@ -13,6 +14,10 @@ module.exports = {
           '^/api': ''
         }
       }
+    },
+    overlay: {
+      warning: false,
+      errors: false
     }
   }
 }
