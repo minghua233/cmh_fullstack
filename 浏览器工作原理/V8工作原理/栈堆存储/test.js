@@ -15,15 +15,8 @@ let jack = {
 
 function copy(src) {
   let dest = src instanceof Array ? [] : {};
-  // 实现拷贝代码，将src的值完整的拷贝给dest
-  // dest = JSON.stringify(src)
-  // return JSON.parse(dest)
-  for(let key in src){
-    if(typeof src[key] == 'object'){
-      dest[key] = copy(src[key])
-    }else{
-      dest[key] = src[key]
-    }
+  for (let key in src) {
+    if (src.hasOwnProperty(key)) typeof src[key] == 'object' ? dest[key] = copy(src[key]) : dest[key] = src[key]
   }
   return dest
 }

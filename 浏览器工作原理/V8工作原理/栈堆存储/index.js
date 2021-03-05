@@ -30,6 +30,8 @@ function foo(){
 }
 foo2()
 
+// 再谈闭包
+
 function foo() {
   var myName = "甘总";
   let test1 = 1;
