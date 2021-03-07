@@ -1,4 +1,6 @@
 //interface 和 type 都是用来声明自定义类型的
+// type可声明基本数据类型，联合类型，元组等类型
+// interface用来声明引用类型
 export type User = { // 类型
   name:string,
   age:number,
