@@ -6,7 +6,7 @@ function findTilt(root: TreeNode | null): number {
     if (!node) return 0
     let tilt = Math.abs(tro(node.left) - tro(node.right))
     sum += tilt
-    let res = pnode.val
+    let res = node.val
     node.left && (res += node.left.val)
     node.right && (res += node.right.val)
     return res
