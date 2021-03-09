@@ -19,3 +19,4 @@ console.log(obj)
 // }
 // call push这个方法如果对象有length属性，length属性会加1 并且返回
 // 只要一个对象的 length 属性为数字，同时splice属性为函数时， 对象的函数输出结果就会变成 伪数组
+console.log(!0);
