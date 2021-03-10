@@ -1,5 +1,5 @@
 # 原始类型有几种？
-Boolean null undefined number string symbol
+Boolean null undefined number string symbol biigInt
 
 # null 是对象吗？
 是
