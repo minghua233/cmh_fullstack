@@ -87,5 +87,6 @@ div + css是逐行显示，table需要完全加载后才显示
 content + padding + border
 
 # inline和inline区别？为什么img是inline还可以设置宽高？
+img
 
 # css画三角形，梯形
