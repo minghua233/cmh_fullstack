@@ -212,3 +212,123 @@ function findAllOccurrences(arr, target) {
   })
   return newArr
 }
+
+// 计时器
+// 题目描述：实现一个打点计时器，要求
+
+// 从 start 到 end（包含 start 和 end），每隔 100 毫秒 console.log 一个数字，每次数字增幅为 1
+// 返回的对象中需要包含一个 cancel 方法，用于停止定时操作
+// 第一个数需要立即输出
+function count(start, end) {
+  console.log(start++)
+  var timer = setInterval(() => {
+    if (start <= end) {
+      console.log(start++)
+    } else {
+      clearInterval(timer)
+    }
+  }, 100)
+  return {
+    cancel: function () {
+      clearInterval(timer)
+    }
+  }
+}
+
+// 流程控制
+// 题目描述：实现 fizzBuzz 函数，参数 num 与返回值的关系如下：
+
+// 如果 num 能同时被 3 和 5 整除，返回字符串 fizzbuzz
+// 如果 num 能被 3 整除，返回字符串 fizz
+// 如果 num 能被 5 整除，返回字符串 buzz
+// 如果参数为空或者不是 Number 类型，返回 false
+// 其余情况，返回参数 num
+function fizzBuzz(num) {
+  if (num == '' || typeof num != 'number') {
+    return false;
+  }
+  var str = '';
+  if (num % 3 == 0) {
+    str += 'fizz';
+  }
+  if (num % 5 == 0) {
+    str += 'buzz';
+  }
+  return str || num
+}
+
+// 函数传参
+// 题目描述：将数组 arr 中的元素作为调用函数 fn 的参数
+// 输入：function (greeting, name, punctuation) {return greeting + ', ' + name + (punctuation || '!');}, ['Hello', 'Ellie', '!']
+// 输出：Hello, Ellie!
+function argsAsArray(fn, arr) {
+  return fn(...arr)
+}
+
+// 二次封装函数
+// 题目描述：实现函数 partialUsingArguments，调用之后满足如下条件：
+
+// 返回一个函数 result
+// 调用 result 之后，返回的结果与调用函数 fn 的结果一致
+// fn 的调用参数为 partialUsingArguments 的第一个参数之后的全部参数以及 result 的调用参数
+function partialUsingArguments(fn) {
+  let args = [...arguments].slice(1)
+  return function result() {
+    return fn.apply(this, args.concat([...arguments]))
+  }
+}
+
+// 柯里化
+// 题目描述：已知 fn 为一个预定义函数，实现函数 curryIt，调用之后满足如下条件：
+
+// 返回一个函数 a，a 的 length 属性值为 1（即显式声明 a 接收一个参数）
+// 调用 a 之后，返回一个函数 b, b 的 length 属性值为 1
+// 调用 b 之后，返回一个函数 c, c 的 length 属性值为 1
+// 调用 c 之后，返回的结果与调用 fn 的返回值一致
+// fn 的参数依次为函数 a, b, c 的调用参数
+
+// 输入：var fn = function (a, b, c) {return a + b + c}; curryIt(fn)(1)(2)(3);
+// 输出：6
+function curryIt(fn) {
+  return function a(A) {
+    return function b(B) {
+      return function c(C) {
+        return fn.call(this, A, B, C)
+      }
+    }
+  }
+}
+
+// 二进制转换
+// 题目描述：获取数字 num 二进制形式第 bit 位的值。注意：
+
+// bit 从 1 开始
+// 返回 0 或 1
+// 举例：2 的二进制为 10，第 1 位为 0，第 2 位为 1**
+
+// 输入：128, 8
+// 输出：1
+function valueAtBit(num, bit) {
+  let res = num.toString(2)
+  return res[res.length - bit]
+}
+// 题目描述：将给定数字转换成二进制字符串。如果字符串长度不足 8 位，则在前面补 0 到满8位。
+function convertToBinary(num) {
+  let res = num.toString(2)
+  let arr = res.split('')
+  if (res.length < 8) {
+    arr.unshift('0')
+  }
+  return arr.join('')
+}
+
+// 检查重复字符串
+// 题目描述：给定字符串 str，检查其是否包含连续重复的字母（a-zA-Z），包含返回 true，否则返回 false
+
+// 输入：'rattler'
+
+// 输出：true
+function containsRepeatingLetter(str) {
+  let reg = /([a-zA-Z])\1/
+  return reg.test(str)
+}
