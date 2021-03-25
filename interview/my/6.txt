@@ -1,0 +1,21 @@
+Array.prototype.distinct = function () {
+  // return [... new Set(this)] es6解法
+  let res = []
+  let hasNaN = false
+  this.forEach(e => {
+    if (res.indexOf(e) === -1) {
+      if (e !== e) {
+        if (!hasNaN) {
+          res.push(e)
+          hasNaN = true
+        }
+      } else {
+        res.push(e)
+      }
+    }
+  })
+  return res
+}
+
+var a =[1,2,3,4,5,2,3,4,6,7,8]
+console.log(a.distinct());
