@@ -1,11 +1,5 @@
-class ClassName {
-  static name = 'static variable'
-  name = 'abc'
-  constructor() {
-    this.fn = function () { }
-  }
-  fn() { 
-
-  }
-}
-console.log(ClassName.name);
+function bar() { }
+function foo() { }
+console.log(bar.__proto__)
+var obj = new foo()
+console.log(obj.__proto__)
